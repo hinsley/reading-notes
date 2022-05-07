@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{James Munkres - Topology}
+
+\large{Carter Hinsley's notes}
+
+Last edited \today
+\end{center}
+
+\setcounter{section}{28}
+\section{Local Compactness}
+
+\textbf{Definition.} A space $X$ is \emph{locally compact at $x$} if there is some compact subspace $C$ of $X$ that contains a nbhd of $x$. If $X$ is locally compact at each of its points, $X$ is said to be \emph{locally compact}.
+
+We ask: "Under what conditions is a space homeomorphic with a subspace of a compact Hausdorff space?"
+
+\textbf{Theorem 29.1.} Let $X$ be a space. $X$ is locally compact Hausdorff iff there exists a space $Y$ satisfying the following conditions:
+\begin{itemize}
+    \item $X$ is a subspace of $Y$.
+    \item $Y - X$ comprises a single point.
+    \item $Y$ is a compact Hausdorff space.
+\end{itemize}
+
+\textbf{Definition.} If $Y$ is a compact Hausdorff space and $X$ is a proper subspace of $Y$ dense in $Y$, then $Y$ is said to be a \emph{compactification} of $X$. If $Y - X$ equals a single point, then $Y$ is called the \emph{one-point compactification} of $X$.
+
+\textbf{Theorem 29.2.} Let $X$ be a Hausdorff space. Then $X$ is locally compact iff given $x \in X$ and a nbhd $U$ of $x$, there is a nbhd $V$ of $x$ such that $\overline{V}$ is compact and $\overline{V} \subset U$.
+
+\textbf{Corollary 29.3.} Any open or closed subspace of a locally compact Hausdorff space is itself locally compact.
+
+\textbf{Corollary 29.4.} A space $X$ is homeomorphic to an open subspace of a compact Hausdorff space iff $X$ is locally compact Hausdorff.
+
+\section*{Exercises}
+
+1. Show that the rationals $\Q$ are not locally compact.
+
+\textbf{Proof.} It will be sufficient to show that $\Q$ is not locally compact at $0$; i.e., that there is no compact subspace of $\Q$ containing a neighborhood of $0$.
+
+Suppose for the sake of contradiction that there existed a compact subspace $C$ of $\Q$ and an open nbhd $U$ of $0$ in $C$. Then there would be some open nbhd $(-\varepsilon, \varepsilon) \cap \Q \subseteq U$ of $0$. Note that the inclusion $\Q \overset{\iota}{\hookrightarrow} \R$ is continuous; this map preserves compactness. Hence $\iota(C)$ is compact in $\R$. As $\R$ is Hausdorff, $\iota(C)$ is closed in $\R$. Thus $[-\varepsilon, \varepsilon] = \overline{(-\varepsilon, \varepsilon) \cap \Q} \subseteq \iota(C)$. Since $[-\varepsilon, \varepsilon]$ is uncountable while $\iota(C)$ is countable, we obtain a contradiction. Hence $\Q$ is not locally compact. $\square$
+
+\end{document}
