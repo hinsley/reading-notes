@@ -57,8 +57,17 @@ Nets are generalizations of sequences that characterize limit points, continuous
 (1) Show that the following are directed sets:
 \begin{itemize}
     \item Any simply ordered set, under the relation $\leq$.
+    
+    \textbf{Proof.} We take $\preceq$ to be $\leq$. Let $S$ be a simply (totally) ordered set with elements $x, y$. Then, as $S$ is simply ordered, either $x \leq y$ or $y \leq x$. By reflexivity, $x \leq x$ and $y \leq y$ in either case, so $y$ or $x$ serves as $\gamma$ respectively. $\square$
+
     \item The collection of all subsets of a set $S$, partially ordered by inclusion.
+    
+    \textbf{Proof.} We are speaking of the power set $\mathcal{P}(S)$. Let $U, V \in \mathcal{P}(S)$. Then there are inclusions $U \hookrightarrow \mathcal{P}(S)$ and $V \hookrightarrow \mathcal{P}(S)$. As the identity map $\mathcal{P}(S) \hookrightarrow \mathcal{P}(S)$ is an inclusion, $\mathcal{P}(S)$ serves as $\gamma$. $\square$
+
     \item A collection $\mathscr{A}$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion.
+    
+    \textbf{Proof.}
+
     \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
 \end{itemize}
 
