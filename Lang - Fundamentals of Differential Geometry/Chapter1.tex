@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsfonts}
+\usepackage{amsfonts, amsmath}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
@@ -16,8 +16,6 @@
 \large{Carter Hinsley's notes}
 \end{center}
 
-\pagebreak
-
 \part{General differential theory}
 
 \section{Differential calculus}
@@ -26,7 +24,13 @@
 
 \subsection{Topological vector spaces}
 
-A topological vector space $E$ over $\R$ is a vector space with a topology where addition and scalar multiplication are continuous. We assume such spaces are Hausdorff and locally convex (local in the sense that every nbhd of $0$ contains an open nbhd $U$ of $0$ wherein for every point $x, y \in U$ and $0 \leq t \leq 1$, $tx+(1-t)y$ also lies in $U$).
+A topological vector space $E$ over $\R$ is a vector space with a topology where addition and scalar multiplication are continuous. We assume such spaces are Hausdorff and locally convex (local in the sense that every nbhd of $0$ contains an open convex nbhd $U$ of $0$).
+
+The category TVS has topological vector spaces as its objects and continuous linear maps as its morphisms. Lang denotes the hom-sets $L(\mathbf{E}, \mathbf{F})$. The continuous $r$-multilinear maps $\psi: \mathbf{E} \times \ldots \times \mathbf{E} \to \mathbf{F}$ are denoted $L^r(\mathbf{E}, \mathbf{F})$. The symmetric and alternating $r$-multilinear maps are denoted $L_s^r(\mathbf{E}, \mathbf{F})$ and $L_{\text{sym}}^r(\mathbf{E}, \mathbf{F})$ respectively. Isomorphisms in TVS are called toplinear isomorphisms. $\text{Lis}(\mathbf{E}, \mathbf{F})$ denotes the toplinear isomorphisms of $\mathbf{E}$ onto $\mathbf{F}$, while $\text{Laut}(\mathbf{E})$ denotes the toplinear automorphisms of $\mathbf{E}$. If a hom-set is written without a target object, the target is assumed to be $\R$. These are called \emph{forms} (particularly, continuous forms, $r$-multilinear forms, etc.).
+
+\emph{Complete spaces.} 
+
+\emph{Banach(able) spaces.} Any complete TVS whose topology can be defined by a norm is called a Banachable space. When equipped with the norm, this is called a Banach space.
 
 \subsection{Derivatives and composition of maps}
 
