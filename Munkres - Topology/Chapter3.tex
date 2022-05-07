@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsfonts, amsmath}
+\usepackage{amsfonts, amsmath, mathrsfs}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
@@ -42,10 +42,38 @@ We ask: "Under what conditions is a space homeomorphic with a subspace of a comp
 
 \section*{Exercises}
 
-1. Show that the rationals $\Q$ are not locally compact.
+(1) Show that the rationals $\Q$ are not locally compact.
 
 \textbf{Proof.} It will be sufficient to show that $\Q$ is not locally compact at $0$; i.e., that there is no compact subspace of $\Q$ containing a neighborhood of $0$.
 
 Suppose for the sake of contradiction that there existed a compact subspace $C$ of $\Q$ and an open nbhd $U$ of $0$ in $C$. Then there would be some open nbhd $(-\varepsilon, \varepsilon) \cap \Q \subseteq U$ of $0$. Note that the inclusion $\Q \overset{\iota}{\hookrightarrow} \R$ is continuous; this map preserves compactness. Hence $\iota(C)$ is compact in $\R$. As $\R$ is Hausdorff, $\iota(C)$ is closed in $\R$. Thus $[-\varepsilon, \varepsilon] = \overline{(-\varepsilon, \varepsilon) \cap \Q} \subseteq \iota(C)$. Since $[-\varepsilon, \varepsilon]$ is uncountable while $\iota(C)$ is countable, we obtain a contradiction. Hence $\Q$ is not locally compact. $\square$
+
+\section*{Supplementary Exercises: Nets}
+
+Nets are generalizations of sequences that characterize limit points, continuous functions, and compact sets not only in metric topologies, but in \emph{all} topologies.
+
+\textbf{Definition.} A \emph{directed set} $J$ is a poset wherein for each pair $\alpha, \beta \in J$, there exists an element $\gamma \in J$ such that $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
+
+(1) Show that the following are directed sets:
+\begin{itemize}
+    \item Any simply ordered set, under the relation $\leq$.
+    \item The collection of all subsets of a set $S$, partially ordered by inclusion.
+    \item A collection $\mathscr{A}$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion.
+    \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
+\end{itemize}
+
+(2) A subset $K$ of $J$ is said to be \emph{cofinal} in $J$ if for each $\alpha \in J$, there exists $\beta \in K$ such that $\alpha \preceq \beta$. Show that if $J$ is a directed set and $K$ is cofinal in $J$, then $K$ is a directed set.
+
+(3) Let $X$ be a topological space. A \emph{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by the symbol $(x_\alpha)_{\alpha \in J}$, or merely by $(x_\alpha)$ if the index set is understood.
+
+The net $(x_\alpha)$ is said to \emph{converge} to the point $x \in X$ (written $x_\alpha \to x$) if for each nbhd $U$ of $x$, there exists $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$ Show that these definitions reduce to familiar ones when $J = Z_+$.
+
+(4) Suppose that $(x_\alpha)_{\alpha \in J} \to x \in X$ and $(y_\alpha)_{\alpha \in J} \to y \in Y$. Show that $(x_\alpha \times y_\alpha) \to x \times y \in X \times Y$.
+
+(5) Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
+
+(6) \textbf{Theorem.} Let $A \in X$. Then $x \in \overline{A}$ iff there is a net of points of $A$ converging to $x$.
+
+(7) \textbf{Theorem.} Let $f : X \to Y$. Then $f$ is continuous iff for every convergent net $(x_\alpha) \to x$ in $X$, the net $(f(x_\alpha))$ converges to $f(x)$.
 
 \end{document}
