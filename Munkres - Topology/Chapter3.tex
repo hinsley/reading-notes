@@ -66,9 +66,11 @@ Nets are generalizations of sequences that characterize limit points, continuous
 
     \item A collection $\mathscr{A}$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion.
     
-    \textbf{Proof.}
+    \textbf{Proof.} We use $\preceq$ to denote $\hookleftarrow$. Let $U, V \in \mathscr{A}$. As $U \cap V \in \mathscr{A}$, we have $U \preceq U \cap V, V \preceq U \cap V$. $\square$
 
     \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
+    
+    \textbf{Proof.} $X$ itself is closed; hence for all $U, V$ closed subsets of $X$, $U \preceq X$ and $V \preceq X$. $\square$
 \end{itemize}
 
 (2) A subset $K$ of $J$ is said to be \emph{cofinal} in $J$ if for each $\alpha \in J$, there exists $\beta \in K$ such that $\alpha \preceq \beta$. Show that if $J$ is a directed set and $K$ is cofinal in $J$, then $K$ is a directed set.
@@ -84,5 +86,24 @@ The net $(x_\alpha)$ is said to \emph{converge} to the point $x \in X$ (written 
 (6) \textbf{Theorem.} Let $A \in X$. Then $x \in \overline{A}$ iff there is a net of points of $A$ converging to $x$.
 
 (7) \textbf{Theorem.} Let $f : X \to Y$. Then $f$ is continuous iff for every convergent net $(x_\alpha) \to x$ in $X$, the net $(f(x_\alpha))$ converges to $f(x)$.
+
+(8) Let $f : J \to X$ be a net in $X$; let $f(\alpha) = x_\alpha$. If $K$ is a directed set and $g : K \to J$ is a function such that
+
+\begin{itemize}
+    \item $i \preceq j \implies g(i) \preceq g(j)$,
+    \item $g(K)$ is cofinal in $J$,
+\end{itemize}
+
+then the composite function $f \circ g : K \to X$ is called a \emph{subnet} of $(x_\alpha)$. Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet.
+
+(9) Let $(x_\alpha)_{\alpha \in J}$ be a net in $X$. $x$ is an \emph{accumulation point} of the net $(x_\alpha)$ if for each nbhd $U$ of $x$, the set of those $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
+
+\textbf{Lemma.} The net $(x_\alpha)$ has the point $x$ as an accumulation point iff some subnet of $(x_\alpha)$ converges to $x$.
+
+(10) \textbf{Theorem.} $X$ is compact iff every net in $X$ has a convergent subnet.
+
+(11) \textbf{Corollary.} Let $G$ be a topological group; let $A$ and $B$ be subsets of $G$. If $A$ is closed in $G$ and $B$ is compact, then $A \cdot B$ is closed in $G$.
+
+(12) Check that the preceding exercises remain correct if condition (2) is omitted from the definition of \emph{directed set}.
 
 \end{document}
