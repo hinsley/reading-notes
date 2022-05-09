@@ -1,6 +1,13 @@
-name: build-latex-docs
+name: Build LaTeX documents
 on: [push]
-uses: xu-cheng/latex-action@v2
-with:
-  root_file: "*.tex"
-  glob_root_file: true
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "*.tex"
+          glob_root_file: true
