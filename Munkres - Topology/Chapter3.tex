@@ -52,6 +52,8 @@ Suppose for the sake of contradiction that there existed a compact subspace $C$ 
 
 Nets are generalizations of sequences that characterize limit points, continuous functions, and compact sets not only in metric topologies, but in \emph{all} topologies.
 
+I am reading about nets because Cauchy nets arose in the exposition on complete topological spaces when I came across them in Serge Lang's \emph{Fundamentals of Differential Geometry}; this was an effort to understand Banach spaces.
+
 \textbf{Definition.} A \emph{directed set} $J$ is a poset wherein for each pair $\alpha, \beta \in J$, there exists an element $\gamma \in J$ such that $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
 
 (1) Show that the following are directed sets:
@@ -127,6 +129,10 @@ $(\impliedby)$ We argue by contraposition. Suppose $f$ is not continuous. Then t
 \end{itemize}
 
 then the composite function $f \circ g : K \to X$ is called a \emph{subnet} of $(x_\alpha)$. Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet.
+
+\textbf{Proof.} Because $(x_\alpha) \to x$, for any neighborhood $U$ of $x$ we can find $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$. Because $g(K)$ is cofinal in $J$, for any $\alpha \in J$ there exists $i \in K$ obeying $\alpha \preceq g(i)$. Then, for any $j \in K$, we have $i \preceq j \implies \alpha \preceq g(i) \preceq g(j)$ so that $f(g(j)) \in U$. Hence the subnet $f \circ g$ converges to $x$. $\square$
+
+\vspace{0.5cm}
 
 (9) Let $(x_\alpha)_{\alpha \in J}$ be a net in $X$. $x$ is an \emph{accumulation point} of the net $(x_\alpha)$ if for each neighborhood $U$ of $x$, the set of those $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
 
