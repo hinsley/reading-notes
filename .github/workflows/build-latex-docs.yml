@@ -9,7 +9,8 @@ jobs:
       - name: Compile LaTeX documents
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: "/*/*.tex"
+          root_file: |
+            "/Lang - Fundamentals of Differential Geometry/*.tex"
+            "/Munkres - Topology/*.tex"
           glob_root_file: true
-          working_directory: /
           work_in_root_file_dir: true
