@@ -113,6 +113,12 @@ $(\impliedby)$ Let $(x_\alpha)_{x \in J}$ be a net of points of $A$ converging t
 
 (7) \textbf{Theorem.} Let $f : X \to Y$. Then $f$ is continuous iff for every convergent net $(x_\alpha) \to x$ in $X$, the net $(f(x_\alpha))$ converges to $f(x)$.
 
+\textbf{Proof.} $(\implies)$ If $f$ is continuous, then every open neighborhood $V$ of $f(x)$ corresponds to an open neighborhood $f^{-1}(V)$ of $x$. We wish to show that $(f(x_\alpha)) \to f(x)$; that is, we must show that $V$ admits an $\alpha \in J$ so that $\alpha \preceq \beta \implies f(x_\beta) \in V$. As $f^{-1}(V)$ yields a $\gamma \in J$ so that $\gamma \preceq \delta \implies x_\delta \in f^{-1}(V)$, we have $\gamma \preceq \delta \implies f(x_\delta) \in f(f^{-1}(V)) = V$. Letting $\alpha = \gamma$, this part of the proof is done.
+
+$(\impliedby)$ We argue by contraposition. Suppose $f$ is not continuous. Then there is some open set $V$ in $Y$ such that $f^{-1}(V)$ is not open in $X$. Particularly, we may choose $y$ within $V$ so that $f^{-1}(y)$ has no open neighborhood contained within $f^{-1}(V)$. That is, all neighborhoods of $f^{-1}(y)$ in $X$ contain points not lying within $f^{-1}(V)$. We may therefore construct a net $(x_\alpha) \to f^{-1}(y)$ of these points (with the directed index set being given by reverse inclusion). In order for $(f(x_\alpha))$ to converge to $y$, we must be able to find for any neighborhood $W$ of $y$ some $\alpha \in J$ such that $\alpha \preceq \beta \implies f(x_\beta) \in W$. But because for any $\beta$, $f(x_\beta) \notin V$, where $V$ is a neighborhood of $y$, this cannot be done. $\square$
+
+\vspace{0.5cm}
+
 (8) Let $f : J \to X$ be a net in $X$; let $f(\alpha) = x_\alpha$. If $K$ is a directed set and $g : K \to J$ is a function such that
 
 \begin{itemize}
