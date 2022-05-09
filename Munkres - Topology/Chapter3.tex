@@ -21,7 +21,7 @@ Last edited \today
 \setcounter{section}{28}
 \section{Local Compactness}
 
-\textbf{Definition.} A space $X$ is \emph{locally compact at $x$} if there is some compact subspace $C$ of $X$ that contains a nbhd of $x$. If $X$ is locally compact at each of its points, $X$ is said to be \emph{locally compact}.
+\textbf{Definition.} A space $X$ is \emph{locally compact at $x$} if there is some compact subspace $C$ of $X$ that contains a neighborhood of $x$. If $X$ is locally compact at each of its points, $X$ is said to be \emph{locally compact}.
 
 We ask: "Under what conditions is a space homeomorphic with a subspace of a compact Hausdorff space?"
 
@@ -34,7 +34,7 @@ We ask: "Under what conditions is a space homeomorphic with a subspace of a comp
 
 \textbf{Definition.} If $Y$ is a compact Hausdorff space and $X$ is a proper subspace of $Y$ dense in $Y$, then $Y$ is said to be a \emph{compactification} of $X$. If $Y - X$ equals a single point, then $Y$ is called the \emph{one-point compactification} of $X$.
 
-\textbf{Theorem 29.2.} Let $X$ be a Hausdorff space. Then $X$ is locally compact iff given $x \in X$ and a nbhd $U$ of $x$, there is a nbhd $V$ of $x$ such that $\overline{V}$ is compact and $\overline{V} \subset U$.
+\textbf{Theorem 29.2.} Let $X$ be a Hausdorff space. Then $X$ is locally compact iff given $x \in X$ and a neighborhood $U$ of $x$, there is a neighborhood $V$ of $x$ such that $\overline{V}$ is compact and $\overline{V} \subset U$.
 
 \textbf{Corollary 29.3.} Any open or closed subspace of a locally compact Hausdorff space is itself locally compact.
 
@@ -46,7 +46,7 @@ We ask: "Under what conditions is a space homeomorphic with a subspace of a comp
 
 \textbf{Proof.} It will be sufficient to show that $\Q$ is not locally compact at $0$; i.e., that there is no compact subspace of $\Q$ containing a neighborhood of $0$.
 
-Suppose for the sake of contradiction that there existed a compact subspace $C$ of $\Q$ and an open nbhd $U$ of $0$ in $C$. Then there would be some open nbhd $(-\varepsilon, \varepsilon) \cap \Q \subseteq U$ of $0$. Note that the inclusion $\Q \overset{\iota}{\hookrightarrow} \R$ is continuous; this map preserves compactness. Hence $\iota(C)$ is compact in $\R$. As $\R$ is Hausdorff, $\iota(C)$ is closed in $\R$. Thus $[-\varepsilon, \varepsilon] = \overline{(-\varepsilon, \varepsilon) \cap \Q} \subseteq \iota(C)$. Since $[-\varepsilon, \varepsilon]$ is uncountable while $\iota(C)$ is countable, we obtain a contradiction. Hence $\Q$ is not locally compact. $\square$
+Suppose for the sake of contradiction that there existed a compact subspace $C$ of $\Q$ and an open neighborhood $U$ of $0$ in $C$. Then there would be some open neighborhood $(-\varepsilon, \varepsilon) \cap \Q \subseteq U$ of $0$. Note that the inclusion $\Q \overset{\iota}{\hookrightarrow} \R$ is continuous; this map preserves compactness. Hence $\iota(C)$ is compact in $\R$. As $\R$ is Hausdorff, $\iota(C)$ is closed in $\R$. Thus $[-\varepsilon, \varepsilon] = \overline{(-\varepsilon, \varepsilon) \cap \Q} \subseteq \iota(C)$. Since $[-\varepsilon, \varepsilon]$ is uncountable while $\iota(C)$ is countable, we obtain a contradiction. Hence $\Q$ is not locally compact. $\square$
 
 \section*{Supplementary Exercises: Nets}
 
@@ -81,23 +81,35 @@ Nets are generalizations of sequences that characterize limit points, continuous
 
 (3) Let $X$ be a topological space. A \emph{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by the symbol $(x_\alpha)_{\alpha \in J}$, or merely by $(x_\alpha)$ if the index set is understood.
 
-The net $(x_\alpha)$ is said to \emph{converge} to the point $x \in X$ (written $x_\alpha \to x$) if for each nbhd $U$ of $x$, there exists $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$. Show that these definitions reduce to familiar ones when $J = \Z^+$.
+The net $(x_\alpha)$ is said to \emph{converge} to the point $x \in X$ (written $x_\alpha \to x$) if for each neighborhood $U$ of $x$, there exists $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$. Show that these definitions reduce to familiar ones when $J = \Z^+$.
 
-\textbf{Proof.} Of course, $\Z^+$ is a directed set ($Z^+$ is a totally ordered set). We say that the sequence $(x_n)_{n \in \Z^+}$ converges to the point $x \in X$ if for each nbhd $U$ of $x$, there exists $M \in \Z^+$ such that $M \leq n \implies x_n \in U$. This is the usual definition, compatible with the net definition. $\square$
+\textbf{Proof.} Of course, $\Z^+$ is a directed set ($Z^+$ is a totally ordered set). We say that the sequence $(x_n)_{n \in \Z^+}$ converges to the point $x \in X$ if for each neighborhood $U$ of $x$, there exists $M \in \Z^+$ such that $M \leq n \implies x_n \in U$. This is the usual definition, compatible with the net definition. $\square$
 
 \vspace{0.5cm}
 
 (4) Suppose that $(x_\alpha)_{\alpha \in J} \to x \in X$ and $(y_\alpha)_{\alpha \in J} \to y \in Y$. Show that $(x_\alpha \times y_\alpha) \to x \times y \in X \times Y$.
 
-\textbf{Proof.} As $(x_\alpha) \to x$ and $(y_\alpha) \to y$, we may say that for any nbhds $U$ and $V$ of $x$ and $y$ respectively, there exist $\alpha, \beta \in J$ such that $\alpha \preceq \gamma \implies x_\gamma \in U$ and $\beta \preceq \delta \implies x_\delta \in V$.
+\textbf{Proof.} As $(x_\alpha) \to x$ and $(y_\alpha) \to y$, we may say that for any neighborhoods $U$ and $V$ of $x$ and $y$ respectively, there exist $\alpha, \beta \in J$ such that $\alpha \preceq \gamma \implies x_\gamma \in U$ and $\beta \preceq \delta \implies x_\delta \in V$.
 
-We would like to show that for any nbhd $U \times V$ of $x \times y$, there's a $\eta \in J$ such that whenever $\eta \preceq \alpha$, we have $x_\alpha \times y_\alpha \in U \times V$. Because $U$ and $V$ are themselves open nbhds of $x$ and $y$ respectively, we may use the $\alpha, \beta \in J$ from the convergence of the corresponding nets. As $J$ is a directed set, there exists $\phi \in J$ such that $\alpha \preceq \phi$ and $\beta \preceq \phi$. By transitivity of the relation $\preceq$, we have $\phi \preceq \psi \implies x_\psi \in U, y_\psi \in V$. It follows that $\phi \preceq \psi \implies x_\psi \times y_\psi \in U \times V$. Hence $(x_\alpha \times y_\alpha) \to x \times y \in X \times Y$. $\square$
+We would like to show that for any neighborhood $U \times V$ of $x \times y$, there's a $\eta \in J$ such that whenever $\eta \preceq \alpha$, we have $x_\alpha \times y_\alpha \in U \times V$. Because $U$ and $V$ are themselves open neighborhoods of $x$ and $y$ respectively, we may use the $\alpha, \beta \in J$ from the convergence of the corresponding nets. As $J$ is a directed set, there exists $\phi \in J$ such that $\alpha \preceq \phi$ and $\beta \preceq \phi$. By transitivity of the relation $\preceq$, we have $\phi \preceq \psi \implies x_\psi \in U, y_\psi \in V$. It follows that $\phi \preceq \psi \implies x_\psi \times y_\psi \in U \times V$. Hence $(x_\alpha \times y_\alpha) \to x \times y \in X \times Y$. $\square$
 
 \vspace{0.5cm}
 
 (5) Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 
+\textbf{Proof.} Suppose a net $(x_\alpha)_{\alpha \in J}$ in $X$ converges to two points $x, x' \in X$. We must show that $x = x'$. Convergence means that we may take any neighborhood $U$ of $x$ or $U'$ of $x'$ and find some $\alpha \in J$ such that $\alpha \preceq \beta$ implies $x_\beta \in U$ and $x_\beta \in U'$. Because $X$ is Hausdorff, if $x \neq x'$ we may take disjoint neighborhoods $U, U'$ and obtain a contradiction. Hence $x = x'$. $\square$
+
+\vspace{0.5cm}
+
 (6) \textbf{Theorem.} Let $A \in X$. Then $x \in \overline{A}$ iff there is a net of points of $A$ converging to $x$.
+
+\textbf{Proof.} The case wherein $x \in A$ is trivial, so we consider only when $x \notin A$.
+
+$(\implies)$ Assuming $x \in \overline{A}$, every deleted neighborhood of $x$ contains another point $y$ of $A$. We would like to construct a net $(x_\alpha)_{\alpha \in J}$ so that we can select any neighborhood $U$ of $x$ in $X$ and find $\alpha \in J$ so that $\alpha \preceq \beta \implies x_\beta \in U \cap X$. As $A$ is a subspace of $X$, we may take any two neighborhoods $U, V$ of $x$ in $X$ and we will have $x \in U \cap V$; it follows that the set of ``neighborhoods'' of $x$ in $A$ endowed with the relation of reverse inclusion form a directed set, denoted $J$. We construct a net $f : J \to A$ by letting $f(U) = y$ be that element of which we are guaranteed existence by $x$'s status as a limit point of $A$. The convergence of this net to $x$ is automatic.
+
+$(\impliedby)$ Let $(x_\alpha)_{x \in J}$ be a net of points of $A$ converging to $x$; that is, for any neighborhood $U \subseteq X$ of $x$ there exists some $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$. As $\alpha \preceq \alpha$ so that $x_\alpha \in A$, we see that every neighborhood of $x$ contains at least one point of $A$. Hence $x \in \overline{A}$. $\square$
+
+\vspace{0.5cm}
 
 (7) \textbf{Theorem.} Let $f : X \to Y$. Then $f$ is continuous iff for every convergent net $(x_\alpha) \to x$ in $X$, the net $(f(x_\alpha))$ converges to $f(x)$.
 
@@ -110,7 +122,7 @@ We would like to show that for any nbhd $U \times V$ of $x \times y$, there's a 
 
 then the composite function $f \circ g : K \to X$ is called a \emph{subnet} of $(x_\alpha)$. Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet.
 
-(9) Let $(x_\alpha)_{\alpha \in J}$ be a net in $X$. $x$ is an \emph{accumulation point} of the net $(x_\alpha)$ if for each nbhd $U$ of $x$, the set of those $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
+(9) Let $(x_\alpha)_{\alpha \in J}$ be a net in $X$. $x$ is an \emph{accumulation point} of the net $(x_\alpha)$ if for each neighborhood $U$ of $x$, the set of those $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
 
 \textbf{Lemma.} The net $(x_\alpha)$ has the point $x$ as an accumulation point iff some subnet of $(x_\alpha)$ converges to $x$.
 
