@@ -75,6 +75,8 @@ Nets are generalizations of sequences that characterize limit points, continuous
 
 (2) A subset $K$ of $J$ is said to be \emph{cofinal} in $J$ if for each $\alpha \in J$, there exists $\beta \in K$ such that $\alpha \preceq \beta$. Show that if $J$ is a directed set and $K$ is cofinal in $J$, then $K$ is a directed set.
 
+\textbf{Proof.} We must show that for every pair of elements $x, y \in K$, there exists an element $z \in K$ such that $x \preceq z$ and $y \preceq z$. Because $K \subseteq J$, we know that $x, y \in J$. Consequently, there exists $\beta \in J$ such that $x \preceq \beta$ and $y \preceq \beta$. As $K$ is cofinal in $J$, there exists $\gamma \in K$ such that $\beta \preceq \gamma$. By transitivity, we have $x \preceq \gamma$ and $y \preceq \gamma$; that is, $K$ is a directed set. $\square$
+
 (3) Let $X$ be a topological space. A \emph{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by the symbol $(x_\alpha)_{\alpha \in J}$, or merely by $(x_\alpha)$ if the index set is understood.
 
 The net $(x_\alpha)$ is said to \emph{converge} to the point $x \in X$ (written $x_\alpha \to x$) if for each nbhd $U$ of $x$, there exists $\alpha \in J$ such that $\alpha \preceq \beta \implies x_\beta \in U$ Show that these definitions reduce to familiar ones when $J = Z_+$.
