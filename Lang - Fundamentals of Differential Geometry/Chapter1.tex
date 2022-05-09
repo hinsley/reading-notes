@@ -24,15 +24,23 @@ Rendered \today
 
 \subsection{Categories}
 
+Most of this exposition is standard fare; the only term I have not seen before is the following.
+
+\textbf{Definition.} Let $f : X \to Y$ be a morphism. A \emph{section} of $f$ is a morphism $g : Y \to X$ such that $f \circ g = \text{id}_Y$.
+
 \subsection{Topological vector spaces}
 
-A topological vector space $E$ over $\R$ is a vector space with a topology where addition and scalar multiplication are continuous. We assume such spaces are Hausdorff and locally convex (local in the sense that every nbhd of $0$ contains an open convex nbhd $U$ of $0$).
+A topological vector space $E$ over $\R$ is \textbf{a vector space} with a topology \textbf{where addition and scalar multiplication are continuous}. We assume such spaces are Hausdorff and locally convex (local in the sense that every nbhd of $0$ contains an open convex nbhd $U$ of $0$).
 
 The category TVS has topological vector spaces as its objects and continuous linear maps as its morphisms. Lang denotes the hom-sets $L(\mathbf{E}, \mathbf{F})$. The continuous $r$-multilinear maps $\psi: \mathbf{E} \times \ldots \times \mathbf{E} \to \mathbf{F}$ are denoted $L^r(\mathbf{E}, \mathbf{F})$. The symmetric and alternating $r$-multilinear maps are denoted $L_s^r(\mathbf{E}, \mathbf{F})$ and $L_{\text{sym}}^r(\mathbf{E}, \mathbf{F})$ respectively. Isomorphisms in TVS are called toplinear isomorphisms. $\text{Lis}(\mathbf{E}, \mathbf{F})$ denotes the toplinear isomorphisms of $\mathbf{E}$ onto $\mathbf{F}$, while $\text{Laut}(\mathbf{E})$ denotes the toplinear automorphisms of $\mathbf{E}$. If a hom-set is written without a target object, the target is assumed to be $\R$. These are called \emph{forms} (particularly, continuous forms, $r$-multilinear forms, etc.).
 
-\emph{Complete spaces.} 
+\textbf{Definition (Cauchy net in a metric space).} A net $(x_\alpha)_{\alpha \in J}$ is \emph{Cauchy} if for any $\varepsilon > 0$ there exists $\alpha \in J$ such that $\alpha \preceq \beta, \gamma \implies d(x_\beta, x_\gamma) < \varepsilon$.
 
-\emph{Banach(able) spaces.} Any complete TVS whose topology can be defined by a norm is called a Banachable space. When equipped with the norm, this is called a Banach space.
+\textbf{Definition (complete space).} \emph{Complete spaces} are those spaces in which Cauchy nets (equivalently, Cauchy filters) converge. Note that we have not defined Cauchy nets outside of the context of metric spaces (the reason for this is that we need a notion of Cauchy filters to make this definition, which I haven't read about yet (TODO)). Also, we need only Cauchy sequences (as Cauchy nets) to converge in order for a metric space to be complete; it is not necessary to consider nets in general.
+
+\textbf{Banach(able) spaces.} A complete TVS whose topology can be defined by a norm is called a Banachable space. When equipped with a norm, this is called a Banach space.
+
+\textbf{Remark.} Because norms induce metrics, it is sufficient to think of the completeness property of Banach spaces in terms of convergence of Cauchy sequences; the machinery of Cauchy nets and Cauchy filters is extraneous here.
 
 \subsection{Derivatives and composition of maps}
 
