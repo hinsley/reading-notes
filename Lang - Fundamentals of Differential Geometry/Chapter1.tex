@@ -38,9 +38,23 @@ The category TVS has topological vector spaces as its objects and continuous lin
 
 \textbf{Definition (complete space).} \emph{Complete spaces} are those spaces in which Cauchy nets (equivalently, Cauchy filters) converge. Note that we have not defined Cauchy nets outside of the context of metric spaces (the reason for this is that we need a notion of Cauchy filters to make this definition, which I haven't read about yet (TODO)). Also, we need only Cauchy sequences (as Cauchy nets) to converge in order for a metric space to be complete; it is not necessary to consider nets in general.
 
-\textbf{Banach(able) spaces.} A complete TVS whose topology can be defined by a norm is called a Banachable space. When equipped with a norm, this is called a Banach space.
+\textbf{Banach(able) spaces.} A complete TVS whose topology can be defined by a norm is called a Banachable space. When equipped with a norm, this is called a Banach space. Continuous linear maps of Banach spaces are called \emph{operators}.
 
-\textbf{Remark.} Because norms induce metrics, it is sufficient to think of the completeness property of Banach spaces in terms of convergence of Cauchy sequences; the machinery of Cauchy nets and Cauchy filters is extraneous here.
+My immediate impression of Banach spaces is that they are in general just complete normed vector spaces; the Banachable spaces are just the equivalence classes of Banach spaces identified by their topologies.
+
+\textbf{Remark.} Because norms induce metrics, it is sufficient to think of the completeness property of Banach spaces in terms of convergence of Cauchy sequences; the machinery of Cauchy nets and Cauchy filters is extraneous here. Also, Lang assumes from now on that all topological vector spaces are Banach spaces, denoted $\mathbf{E}, \mathbf{F}, \ldots$.
+
+\textbf{Proposition 2.1.} Every linear homeomorphism of $\mathbf{E}$ onto $\mathbf{F}$ is a toplinear isomorphism.
+
+\textbf{Remark.} In the text, only ``continuous bijective linear maps'' are mentioned in Proposition 2.1; however, as these form isomorphisms, they should have inverses with the same structure, so I hope that I am not mistaken in taking this to mean linear homeomorphisms.
+
+\textbf{Proposition 2.2.} If $\mathbf{E}$ is a Banach space decomposable into the sum of two complementary (i.e., disjoint other than sharing $0$) closed subspaces $\mathbf{F}_1, \mathbf{F}_2$, then the map of $\mathbf{F}_1 \times \mathbf{F}_2$ onto $\mathbf{E}$ given by summation ($(v_1, v_2) \mapsto v_1 + v_2$) is a toplinear isomorphism. We say in such cases that each of $\mathbf{F}_1$ and $\mathbf{F}_2$ \emph{splits} in $\mathbf{E}$.
+
+\textbf{Proposition 2.3.} Let $\mathbf{E}$ be a Banach space and $x \neq 0$ an element of $\mathbf{E}$. Then there exists a continuous linear map $\lambda : \mathbf{E} \to \R$ such that $\lambda(x) \neq 0$.
+
+We can put a topology on the hom-set $L(\mathbf{E}, \mathbf{F})$. If $A \in L(\mathbf{E}, \mathbf{F})$ is a continuous linear map (a.k.a. bounded linear map), then we can define the norm of $A$ to be the argument-infimum ($\arg\inf$) of $K$ such that $\|A(x)\| \leq K\|x\|$ for all $x \in \mathbf{E}$. $L(\mathbf{E}, \mathbf{F})$ is then a Banach space.
+
+To extend this to making $L(\textbf{E}_1, \ldots, \textbf{E}_r; \textbf{F})$ into a Banach space, we define the norm of $A : \textbf{E}_1 \times \ldots \times \textbf{E}_r \to F$ to be the argument-infimum of $K$ such that $\|A(x_1, \ldots, x_r)\| \leq K\|x_1\| \ldots \|x_r\|$.
 
 \subsection{Derivatives and composition of maps}
 
