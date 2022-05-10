@@ -13,6 +13,7 @@ jobs:
             Lang - Fundamentals of Differential Geometry/*.tex
             Munkres - Topology/*.tex
             Rudin - Principles of Mathematical Analysis/*.tex
+            Tu - Introduction to Manifolds/*.tex
           glob_root_file: true
           work_in_root_file_dir: true
       - name: Upload PDFs
@@ -23,3 +24,4 @@ jobs:
             Lang - Fundamentals of Differential Geometry/*.pdf
             Munkres - Topology/*.pdf
             Rudin - Principles of Mathematical Analysis/*.pdf
+            Tu - Introduction to Manifolds/*.pdf
