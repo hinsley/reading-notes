@@ -20,4 +20,56 @@
 Rendered \today
 \end{center}
 
+\section{Discussion of main problem}
+
+\textbf{Definition 7.1.} Let $\{f_n\}$ be a sequence of functions $E \to \C$, where the image sequence $\{f_n(x)\}$ converges for every $x \in E$. We can then define the \emph{limit function} $\displaystyle f(x) := \lim_{n\to\infty} f_n(x)$ as a map $E \to \C$. Likewise, if $\sum f_n(x)$ converges for every $x \in E$, we can define the \emph{sum} $\displaystyle f(x) := \sum f_n(x)$ of the series $\sum f_n$.
+
+We care to determine what properties of functions in the sequence $\{f_n\}$ are preserved under these limit operations (i.e., taking the limit and sum functions).
+
+In particular, the statement that the limit of a sequence of continuous functions is continuous is equivalent to the interchange of limits $\displaystyle \lim_{t \to x} \lim_{n \to \infty} f_n(t) = \lim_{n \to \infty} \lim_{t \to x} f_n(t)$. An example of when this is not true is $\displaystyle 1 = \lim_{n \to \infty} \lim_{m \to \infty} \frac{m}{m + n} \neq \lim_{m \to \infty} \lim_{n \to \infty} \frac{m}{m + n} = 0$. Further examples show that sum functions of sequences may be discontinuous, that limits of sequences of continuous functions may be \emph{everywhere} discontinuous, that derivatives of limits of sequences of differentiable functions may disagree with the derivatives of the sequential functions, and that the integrals of limits of sequences of integrable functions may disagree with the integrals of the sequential functions.
+
+A new, stronger (than in Definition 7.1) notion of convergence is needed to cause limits of sequences of functions to preserve analytical properties: uniform convergence.
+
+\section{Uniform convergence}
+
+\textbf{Definition 7.7.} A sequence $\{f_n\}$ of functions $E \to \C$ converges \emph{uniformly} on $E$ to a function $f : E \to \C$ if for every $\varepsilon > 0$ there exists $N \in \Z^+$ such that $n \geq N$ implies $|f_n(x) - f(x)| < \varepsilon$ for all $x \in E$.
+
+\textbf{Theorem (Cauchy criterion for uniform convergence).} A sequence $\{f_n\}$ of functions $E \to \C$ converges uniformly on $E$ iff for every $\varepsilon > 0$ there exists $N \in \Z^+$ such that $m, n \geq N$ implies $|f_n(x) - f_m(x)| < \varepsilon$.
+
+\textbf{Theorem 7.9.} Suppose $\displaystyle \lim_{n \to \infty} f_n(x) = f(x)$ for all $x \in E$. Let $\displaystyle M_n = \sup_{x \in E} |f_n(x) - f(x)|$. Then $f_n \to f$ uniformly on $E$ iff $M_n \to 0$ as $n \to \infty$.
+
+\textbf{Remark} The above is pretty much indistinguishable from Definition 7.7. I'm not sure why Rudin thought it pertinent to add this ``Theorem.''
+
+A test for uniform convergence of series due to Weierstrass follows.
+
+\textbf{Theorem 7.10.} Suppose $\{f_n\}$ is a sequence of functions $E \to \C$ and $\{M_n\} \subset \R$ is defined so that $|f_n(x)| \leq M_n$ for all $x \in E, n \in \Z^+$. Then $\sum f_n$ converges uniformly on $E$ if $\sum M_n$ converges. One can think of this as assigning a bound $\pm M_n$ on the image set of each summand function $f_n$ and checking if the resultant bound series absolutely converges; this technique is actually rather obvious.
+
+\section{Uniform convergence and continuity}
+
+\textbf{Theorem 7.11.} Suppose $f_n \to f$ uniformly on a set $E$ in a metric space. Let $x$ be a limit point of $E$. Then $\displaystyle \lim_{t \to x} \lim_{n \to \infty} f_n(t) = \lim_{n \to \infty} \lim_{t \to x} f_n(t)$.
+
+\textbf{Theorem 7.12.} Suppose $f_n \to f$ uniformly on $E$ where each $f_n$ is continuous. Then $f$ is continuous on $E$. (This is immediate from Theorem 7.11.)
+
+We would like to know when then converse is true; the following theorem can help.
+
+\textbf{Theorem 7.13.} Suppose $K$ is compact and the following three conditions are met:
+
+\begin{itemize}
+    \item $\{f_n\}$ is a sequence of continuous functions $K \to \C$,
+    \item $f_n \to f$ pointwise where $f$ is a continuous function $K \to \C$,
+    \item $f_n(x) \geq f_{n+1}(x)$ for all $x \in K, n \in \Z^+$ (i.e., $\{f_n(x)\}$ is a monotone decreasing sequence for all $x \in K$).
+\end{itemize}
+
+Then $f_n \to f$ uniformly on $K$.
+
+TODO: Add 7.14 and 7.15 here.
+
+\section{Uniform convergence and integration}
+
+\section{Uniform convergence and differentiation}
+
+\section{Equicontinuous families of functions}
+
+\section{The Stone-Weierstrass theorem}
+
 \end{document}
