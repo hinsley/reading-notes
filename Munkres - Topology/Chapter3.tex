@@ -2,6 +2,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{hyperref}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
@@ -143,5 +144,26 @@ then the composite function $f \circ g : K \to X$ is called a \emph{subnet} of $
 (11) \textbf{Corollary.} Let $G$ be a topological group; let $A$ and $B$ be subsets of $G$. If $A$ is closed in $G$ and $B$ is compact, then $A \cdot B$ is closed in $G$.
 
 (12) Check that the preceding exercises remain correct if condition (2) is omitted from the definition of \emph{directed set}.
+
+\section*{Additional topic: Filters}
+
+A natural complement to nets is the notion of \emph{filters}. The following material can be \href{https://web.archive.org/web/20220510181051/https://ncatlab.org/nlab/show/filter}{read on nLab}.
+
+\textbf{Definition.} Let $S$ be a poset. A subset $F \subseteq S$ is called a \emph{filter} if $F$ satisfies the two following criteria:
+
+\begin{itemize}
+    \item $F$ is \emph{upward-closed}: If $x \in F, y \in S$ and $x \preceq y$, then $y \in F$. This is sometimes meant by calling $F$ an \emph{upper set}.
+    \item $F$ is \emph{downward-directed}: Given any elements $x \preceq y$ in $F$, there exists some $z \in F$ such that $z \preceq x$ and $z \preceq y$.
+\end{itemize}
+
+One can easily see that sufficiently ``small'' subsets of topologies form filters under reverse inclusion. This leads naturally to the notion of Cauchy filters. In fact, each proper filter of a topology corresponds to a net; Cauchy filters correspond to Cauchy nets, but the converse is only true in (and is a sufficient condition for) Cauchy spaces.
+
+\textbf{Definition.} A filter $F \subset S$ is a \emph{proper} filter in $S$ if $F \neq S$.
+
+\textbf{Definition.} A filter is an \emph{ultrafilter} or \emph{maximal} filter if it is maximal among proper filters.
+
+\textbf{Definition.} The \emph{principal ultrafilter} (of subsets of $S$) at an element $x \in S$ is the filter comprising all subsets of $S$ containing $x$, given the partial order induced by inclusion.
+
+TODO: Add some material on prime filters, ideals, lattices, and filterbases.
 
 \end{document}
