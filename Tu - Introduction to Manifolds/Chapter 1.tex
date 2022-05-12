@@ -31,11 +31,11 @@ Analytic functions are equal to their Taylor series expansions in some open neig
     f(x) = \left\{\begin{matrix} e^{-1/x} & \text{for } x > 0, \\ 0 & \text{for } x \leq 0. \end{matrix}\right.
 \end{align}
 
-\textbf{Lemma 1.4 (Taylor's theorem with remainder).} Let $f$ be a $C^\infty$ function on a star-shaped (with respect to a point $p = (p^1, \ldots, p^n) \in U$) subset $U \subseteq \R^n$. Then there are functions $\frac{\partial f}{\partial x^1}(x), \ldots, \frac{\partial f}{\partial x^n}(x) \in C^\infty(U)$ such that
+\textbf{Lemma 1.4 (Taylor's theorem with remainder).} Let $f$ be a $C^\infty$ function on a star-shaped (with respect to a point $p = (p^1, \ldots, p^n) \in U$) subset $U \subseteq \R^n$. Then there are functions $g_1(x), \ldots, g_n(x) \in C^\infty(U)$ such that $g_i(p) = \frac{\partial f}{\partial x^i}(p)$ and
 
 \begin{align}
 \begin{split}
-    f(x) &= f(p) + \sum_{i=1}^n (x^i - p^i)\frac{\partial f}{\partial x^i}(p).
+    f(x) &= f(p) + \sum_{i=1}^n (x^i - p^i)g_i(x).
 \end{split}
 \end{align}
 
@@ -76,5 +76,39 @@ If two functions $f$ and $g$ agree on some neighborhood of a point $p$, then $Df
 A $k$-algebra is a ring $R$ equipped with a scalar action from a field $k$ satisfying homogeneity: $c(ab) = (ca)b = a(cb)$ where $a, b \in R$ and $c \in k$. The usual linearity terminology for maps applies to algebras. Algebra homomorphisms are linear maps that preserve the algebra multiplication (i.e., the multiplication of the underlying ring).
 
 \textbf{Example.} The addition and multiplication of functions render $C_p^\infty$ an $\R$-algebra.
+
+\subsection{Derivations at a point}
+
+Any linear map $D : C_p^\infty \to \R$ satisfying the Leibniz rule $D_v(fg) = (D_vf)g(p) + f(p)D_vg$ (in other words, the product rule) is called a \emph{derivation at $p$} or a \emph{point-derivation} of $C_p^\infty$. The set of all derivations at $p$ is denoted by $\mathfrak{D}_p(\R^n)$; this itself is a vector space over $\R$.
+
+\textbf{Theorem 2.2.} The linear map
+\begin{align}
+\begin{split}
+    \phi : T_p\R^n &\to \mathfrak{D}_p(\R^n) \\
+    v &\mapsto D_v = \sum v^k \left.\frac{\partial}{\partial x^i}\right|_p
+\end{split}
+\end{align}
+is a vector space isomorphism.
+
+\textbf{Proof.} Injectivity is easy to see. As for surjectivity, let $D \in \mathfrak{D}_p(\R^n)$ and let $(f, U)$ be a representative of a germ in $C_p^\infty$, where $U$ is an open ball. By Taylor's theorem with remainder, we have $f(x) = f(p) + \sum (x^i - p^i)g_i(x)$ and $g_i(p) = \frac{\partial f}{\partial x^i}(p)$. Applying $D$ to both sides, Leibniz rule and vanishing constants yield
+
+\begin{align}
+\begin{split}
+    Df(x) &= \sum (Dx^i)g_i(p) + \sum (p^i - p^i) Dg_i(x) \\ \ \\
+    &= \sum (Dx^i) \frac{\partial f}{\partial x^i}(p).
+\end{split}
+\end{align}
+
+Hence $D = D_v$ where $v = \langle Dx^1, \ldots, Dx^n \rangle$. $\square$
+
+We have just shown that there is a one-to-one correspondence between the tangent vectors at $p$ and the derivations at $p$; in particular, the point-derivations are precisely the directional derivatives. This vector space $\mathfrak{D}_p(\R^n)$ may be generalized to smooth manifolds, so we will keep its structure in mind as we move onward.
+
+Theorem 2.2 admits a correspondence between bases:
+
+\begin{align}
+    e^i \overset{\phi}{\longmapsto} \left.\frac{\partial}{\partial x^i}\right|_p.
+\end{align}
+
+From now on, the author ``will make this identification and write a tangent vector $v = \langle v^1, \ldots, v^n \rangle = \sum v^ie_i$ as $v = \sum v^i \left.\frac{\partial}{\partial x^i}\right|_p$''. We instead use Einstein summative notation and write a tangent vector $v = v^ie_i$ as $v = v^i \partial_i|_p$.
 
 \end{document}
