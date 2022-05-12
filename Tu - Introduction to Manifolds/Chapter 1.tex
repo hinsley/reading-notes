@@ -1,0 +1,48 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{hyperref}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Loring Tu - Introduction to Manifolds}
+
+\Large{Chapter 1: Euclidean spaces}
+
+\large{Carter Hinsley's notes}
+
+Rendered \today
+\end{center}
+
+\section{Smooth functions on a Euclidean space}
+
+\subsection{$C^\infty$ versus analytic functions}
+
+Analytic functions are equal to their Taylor series expansions in some open neighborhood of the point at which the expansion is taken. Meanwhile, there is a $C^\infty$ function which does not agree on any neighborhood of $0$ with its Maclaurin series expansion (which is identically zero on $\R$):
+
+\begin{align}
+    f(x) = \left\{\begin{matrix} e^{-1/x} & \text{for } x > 0, \\ 0 & \text{for } x \leq 0. \end{matrix}\right.
+\end{align}
+
+\textbf{Lemma 1.4 (Taylor's theorem with remainder).} Let $f$ be a $C^\infty$ function on a star-shaped (with respect to a point $p = (p^1, \ldots, p^n) \in U$) subset $U \subseteq \R^n$. Then there are functions $\frac{\partial f}{\partial x^1}(x), \ldots, \frac{\partial f}{\partial x^n}(x) \in C^\infty(U)$ such that
+
+\begin{align}
+\begin{split}
+    f(x) &= f(p) + \sum_{i=1}^n (x^i - p^i)\frac{\partial f}{\partial x^i}(p).
+\end{split}
+\end{align}
+
+\section*{Problems}
+
+\subsection*{1.1. A function that is $C^2$ but not $C^3$}
+
+Let $g : \R \to \R$ be the function in Example 1.2(iii). Show that the function $h(x) = \int_0^x g(t)\ dt$ is $C^2$ but not $C^3$ at $x = 0$.
+
+\end{document}
