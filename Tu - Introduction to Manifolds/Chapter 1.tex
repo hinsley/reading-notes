@@ -69,4 +69,12 @@ It's clear that $D : v \mapsto D_v$ creates a correspondence between tangent vec
 
 \subsection{Germs of functions}
 
+If two functions $f$ and $g$ agree on some neighborhood of a point $p$, then $Df$ and $Dg$, being maps $T_p\R^n \to \R$, are identical. Let $f : U \to \R$ be a $C^\infty$ function where $U$ is an open neighborhood of $p$. The pair $(f, U)$ is equivalent to $(g, V)$ if there is an open neighborhood $W \subseteq U \cap V$ of $p$ wherein $f|_W = g|_W$. The equivalence class of $(f, U)$ is called the \emph{germ} of $f$ at $p$; the set of all germs of $C^\infty$ functions on $\R^n$ at $p$ is denoted $C_p^\infty(\R^n)$ or $C_p^\infty$.
+
+\textbf{Example.} (From the \href{https://ltu.pages.tufts.edu/doc/mf2_master_errata2.pdf}{errata}) The set $C^\infty$(U) of all $C^\infty$ functions on an open set $U \subseteq \R^n$ is a $\R$-algebra.
+
+A $k$-algebra is a ring $R$ equipped with a scalar action from a field $k$ satisfying homogeneity: $c(ab) = (ca)b = a(cb)$ where $a, b \in R$ and $c \in k$. The usual linearity terminology for maps applies to algebras. Algebra homomorphisms are linear maps that preserve the algebra multiplication (i.e., the multiplication of the underlying ring).
+
+\textbf{Example.} The addition and multiplication of functions render $C_p^\infty$ an $\R$-algebra.
+
 \end{document}
