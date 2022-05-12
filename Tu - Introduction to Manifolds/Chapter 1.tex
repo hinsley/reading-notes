@@ -49,6 +49,24 @@ Let $g : \R \to \R$ be the function in Example 1.2(iii). Show that the function 
 
 \section{Tangent vectors in $\R^n$ as derivations}
 
-A vector in $\R^3$ at a point $p$ is usually represented as a $3\times1$ "column" matrix or as an arrow emanating from $p$. A secant plane to a surface in $\R^3$ is a plane determined by three points on the surface. Taking these three points to approach $p$ in the limit, we obtain the \emph{tangent plane} to the surface at $p$.
+A vector in $\R^3$ at a point $p$ is usually represented as a $3\times1$ "column" matrix or as an arrow emanating from $p$. A secant plane to a surface in $\R^3$ is a plane determined by three points on the surface. Taking these three points to approach $p$ in the limit, we obtain the \emph{tangent plane} to the surface at $p$. This representation of a tangent plane unfortunately only works when the surface is embedded in Euclidean space. We would rather have a representation intrinsic to the surface (or manifold).
+
+\subsection{The directional derivative}
+
+We write elements of the tangent space $T_p\R^n$ as $\langle v^1, \ldots, v^n \rangle$. The line through a point $p = (p^1, \ldots, p^n)$ with direction $v = \langle v^1, \ldots, v^n \rangle$ in $\R^n$ has parametrization $c(t) = (p^1 + tv^1, \ldots, p^n + tv^n)$. If $f$ is $C^\infty$ in a neighborhood of $p$ in $\R^n$ and $v \in T_p\R^n$, the \emph{directional derivative} of $f$ in the direction $v$ at $p$ is 
+
+\begin{align}
+    \displaystyle D_vf &= \lim_{t \to 0} \frac{f(c(t)) - f(p)}{t} = \left.\frac{d}{dt}\right|_{t=0} f(c(t)) = \sum_{i=1}^n v^i \frac{\partial f}{\partial x^i}(p).
+\end{align}
+
+We may unambiguously write
+
+\begin{align}
+    D_v = \sum v^i \left.\frac{\partial}{\partial x^i}\right|_p.
+\end{align}
+
+It's clear that $D : v \mapsto D_v$ creates a correspondence between tangent vectors and differential operators on functions so that we can study the latter.
+
+\subsection{Germs of functions}
 
 \end{document}
