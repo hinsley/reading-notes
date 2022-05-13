@@ -109,6 +109,17 @@ Theorem 2.2 admits a correspondence between bases:
     e^i \overset{\phi}{\longmapsto} \left.\frac{\partial}{\partial x^i}\right|_p.
 \end{align}
 
-From now on, the author ``will make this identification and write a tangent vector $v = \langle v^1, \ldots, v^n \rangle = \sum v^ie_i$ as $v = \sum v^i \left.\frac{\partial}{\partial x^i}\right|_p$''. We instead use Einstein summative notation and write a tangent vector $v = v^ie_i$ as $v = v^i \partial_i|_p$.
+From now on, the author ``will make this identification and write a tangent vector $v = \langle v^1, \ldots, v^n \rangle = \sum v^ie_i$ as $v = \sum v^i \left.\frac{\partial}{\partial x^i}\right|_p$''. We instead use Einstein summative notation and write a tangent vector $v = v^ie_i$ as $v = v^i \partial_{x^i}|_p$.
+
+\section{Vector fields}
+
+A vector field $X$ on an open subset $U$ of $\R^n$ is a function $p \mapsto X_p$ where $p \in U$ and $X_p \in T_p\R^n$. In general, a vector field is a function taking points on some manifold to tangent vectors in the tangent spaces of those points.
+
+As $T_p\R^n$ has basis $\{\partial_{x^i}|_p\}$, we can write $X_p = a^i(p)\partial_{x^i}|_p$, where $p \in U$ and $a^i(p) \in \R$. With some abuse of notation we can write $X = a^i \partial_{x^i}$. The vector field $X$ is said to be $C^\infty$ on $U$ if the coefficient functions $a^i$ are all $C^\infty$ on $U$. We can write vector fields on $U$ with column vectors of $C^\infty$ functions on $U$ (this generalizes to charts):
+\begin{align}
+    X = a^i\partial_{x^i} \longleftrightarrow \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix}.
+\end{align}
+
+We denote by $C^\infty(U)$ or $\mathcal{F}(U)$ the ring of $C^\infty$ functions on an open set $U$. The operations are pointwise. We denote by $\mathfrak{X}(U)$ the set of all $C^\infty$ vector fields on $U$. This is both a vector space over $\R$ and a $C^\infty(U)$-module.
 
 \end{document}
