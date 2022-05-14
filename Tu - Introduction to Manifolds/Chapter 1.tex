@@ -85,7 +85,7 @@ Any linear map $D : C_p^\infty \to \R$ satisfying the Leibniz rule $D_v(fg) = (D
 \begin{align}
 \begin{split}
     \phi : T_p\R^n &\to \mathfrak{D}_p(\R^n) \\
-    v &\mapsto D_v = \sum v^k \left.\frac{\partial}{\partial x^i}\right|_p
+    v &\mapsto D_v = \sum v^i \left.\frac{\partial}{\partial x^i}\right|_p
 \end{split}
 \end{align}
 is a vector space isomorphism.
@@ -121,5 +121,38 @@ As $T_p\R^n$ has basis $\{\partial_{x^i}|_p\}$, we can write $X_p = a^i(p)\parti
 \end{align}
 
 We denote by $C^\infty(U)$ or $\mathcal{F}(U)$ the ring of $C^\infty$ functions on an open set $U$. The operations are pointwise. We denote by $\mathfrak{X}(U)$ the set of all $C^\infty$ vector fields on $U$. This is both a vector space over $\R$ and a $C^\infty(U)$-module.
+
+\subsection{Vector fields as derivations}
+
+When $X$ is a $C^\infty$ vector field on $U$ open in $\R^n$ and $f \in C^\infty(U)$ we can speak of the function $Xf \in C^\infty(U)$, where $(Xf)(p) = X_pf$ for any $p \in U$. Hence ``a $C^\infty$ vector field $X$ gives rise to an $\R$-linear map'':
+\begin{align}
+\begin{split}
+    C^\infty(U) &\to C^\infty(U), \\
+    f &\mapsto Xf.
+\end{split}
+\end{align}
+$\R$-linearity here comes from the equation $X = a^i\partial_{x^i}$, though the author slightly obscures this fact.
+
+\textbf{Proposition 2.6 (Leibniz rule for a vector field).} Let $X$ be a $C^\infty$ vector field on an open subset $U$ of $\R^n$. Let $f, g \in C^\infty(U)$. Then $X(fg)$ satisfies Leibniz rule.
+
+If $A$ is a $k$-algebra, a \emph{derivation} of $A$ is a $k$-linear map $D : A \to A$ satisfying Leibniz rule. The set of all derivations of $A$, $\text{Der}(A)$, is itself a vector space. The author now says that ``as noted above, a $C^\infty$ vector field on an open set $U$ gives rise to a derivation of the algebra $C^\infty(U)$.'' $X$ is indeed that derivation.
+
+Additional commentary is warranted here. We have a mental image of a vector field being an attachment of ``hairs'' to an open set $U$ (in general, a manifold). But we can precisely identify the individual tangent vectors in these vector fields with directional derivatives, which form endomorphisms on $C^\infty(U)$ because the derivative of a $C^\infty$ function is still $C^\infty$. Moreover, because of the surjectivity of the map in Theorem 2.2 (stating that tangent spaces are linearly isomorphic to point-derivation spaces), we can go as far as to identify vector fields with derivations at large.
+
+The objects we have described thus far are:
+\begin{itemize}
+    \item $\R^n$: $n$-dimensional Euclidean space.
+    \item $T_p\R^n$: The tangent space to a point $p \in \R^n$.
+    \item $(f, U)$: A representative of a germ. Germs are equivalence classes of functions having the same derivative structure at a given point $p$.
+    \item $C_p^\infty(\R^n)$: The $\R$-algebra of all germs of $C^\infty$ functions on $\R^n$ at a point $p \in \R^n$.
+    \item $C^\infty(U)$: The $\R$-algebra of all $C^\infty$ functions on an open set $U \subseteq \R^n$.
+    \item $D : C_p^\infty \to \R$: If such a map satisfies Leibniz rule, this is called a derivation at $p$ or point-derivation of $C_p^\infty$.
+    \item $\mathfrak{D}_p(\R^n)$: The set of all derivations at $p$. This is a vector space over $\R$.
+    \item $X : U \to T_pU$: A vector field on an open set $U \subseteq \R^n$. Abusing notation somewhat, we can write $X = a^i\partial_{x^i}$ and get $X \in \text{End}(C^\infty(U))$.
+    \item $\mathfrak{X}(U)$: The set of all $C^\infty$ vector fields on $U$. This is both a vector space over $\R$ and a $C^\infty(U)$-module.
+    \item $X_p \in T_pU$: Implemented as $X_p = a^i(p)\partial_{x^i}|_p$, this is a tangent vector at a point $p \in U$.
+    \item $X_pf \in \R$: Directional derivative of $f$ at the point $p$ in the direction of the tangent vector $X_p$.
+    \item $Xf \in C^\infty(U)$: A vector field (see the entry for $X : U \to T_pU$: ``Abusing notation\ldots''). $(Xf)(p) = X_pf$.
+\end{itemize}
 
 \end{document}
