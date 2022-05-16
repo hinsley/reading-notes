@@ -21,4 +21,20 @@
 Rendered \today
 \end{center}
 
+A fibre bundle is a topological space that locally looks like a product of two topological spaces. A friend told me that one way to think of fibre bundles is as a more general object than tangent bundles due to the removal of prejudice about what might constitute a base space, while fibre bundles carry more structure than the analogous purely topological object in the sense that they act much like dependent types do in type theory. Still, though, some benefits in terms of computational power come when making restrictions to certain types of fibre bundles.
+
+\section{Tangent bundles}
+
+\textbf{Definition.} A \emph{tangent bundle} $TM$ over an $n$-dimensional manifold $M$ is the collection of all tangent spaces of $M$:
+
+\begin{align}
+    TM = \bigcup_{p \in M} T_pM.
+\end{align}
+
+\textbf{Definition.} $M$ is the \emph{base space} of $TM$.
+
+In general, manifolds are characterized by their local resemblence of Euclidean space. In general, an atlas of a manifold comprises a collection of sets $\{U_i\}$ which are open in $M$, called charts; this collection forms an open cover of $M$.
+
+Let's look at the coordinate system induced by $\{U_i\}$. Taking $x^\mu = \varphi_i^\mu(p)$ to be a coordinate of a point on $U_i$, where $\varphi_i^\mu : U_i \to \R$, we see that $\displaystyle TU_i = \bigcup_{p \in U_i} T_pM$, the tangent bundle on $U_i$, has elements specified as pairs $(p, V)$ where $p \in M$ and $V = V^\mu(p)\partial_{x^\mu}|_p \in T_pM$. Because there's a diffeomorphism between $U_i$ and $\varphi(U_i) \subseteq \R^n$ as well as between $T_pM$ and $\R^n$, we see that $TU_i$ is identified with the direct product $\R^n \times \R^n$, being a manifold itself with dimension $2n$. Nakahara builds this identification via $(p, V) \mapsto (x^\mu(p), V^\mu(p))$.
+
 \end{document}
