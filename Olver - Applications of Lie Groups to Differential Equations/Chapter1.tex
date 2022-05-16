@@ -1,0 +1,56 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{hyperref}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Peter Olver - Applications of Lie Groups to Differential Equations}
+
+\Large{Chapter 1: Introduction to Lie groups}
+
+\large{Carter Hinsley's notes}
+
+Rendered \today
+\end{center}
+
+\section{Manifolds}
+
+The usual notation and background goes on here. Interestingly, Olver states that the coordinate charts on a manifold yield a basis for a Hausdorff topology by the use of the subspace topology on the image of the corresponding coordinate functions. Another interesting thing to note is that Olver doesn't say the coordinate functions need to be diffeomorphisms; they must merely be injective. It is the transition maps that must be diffeomorphisms.
+
+In example 1.4, Olver claims the torus $T^2 = S^1 \times S^1$ can be covered by three charts. Why not two? I should think that you could just take two annuli and cover the whole thing. But, well, if you could do that, then $S^1$ could be parametrized by a \emph{single} chart rather than two. It might be worth verifying that two such charts do not satisfy all the criteria for charts. Images of charts should be simply connected; a friend says this criterion means charts (as maps) should be ``simply supported.'' But the problem warrants deeper investigation.
+
+I will try to construct an atlas for a torus using only two charts. Let $(\theta, \varphi)$ describe a point on the torus in terms of two angles, where $0 \leq \theta, \varphi < 2\pi$. Let $U_\alpha = \{(\theta, \varphi) \mid \theta \neq 0\}$ and $U_\beta = \{(\theta, \varphi) \mid \theta \neq \pi\}$. Then $U_\alpha \cap U_\beta = \{(\theta, \varphi) \mid \theta \notin \{0, \pi\}\}$. Taking $\chi_\alpha(\theta, \varphi) = (\theta, \varphi)$ to be a map to polar coordinates for $\R^2$ where radius is specified by $\theta$ we get an injective coordinate map. Similarly, $\chi_\beta$ can be given as a piecewise map into polar coordinates $\chi_\beta(\theta, \varphi) = \left\{ \begin{array}{ll} (\pi - \theta, \varphi) & \text{if } \theta < \pi, \\ (3\pi - \theta, \varphi) & \text{if } \theta > \pi. \end{array} \right.$ We now must check that $\chi_\alpha \circ \chi_\beta^{-1}$ and $\chi_\beta \circ \chi_\alpha^{-1}$ are smooth. To do this, we find the inverses:
+\begin{align}
+    \chi_\alpha^{-1}(r, \varphi) &: \begin{array}{rcl} \{(r, \varphi) \mid 0 < r < 2\pi\} & \to & U_\alpha \\ (r, \varphi) & \mapsto & (r, \varphi) \end{array}
+\end{align}
+\begin{align}
+    \chi_\beta^{-1}(r, \varphi) &: \begin{array}{rcl} \{(r, \varphi) \mid 0 < r < 2\pi\} & \to & U_\beta \\ (r, \varphi) & \mapsto & \left\{ \begin{array}{ll} (\pi - r, \varphi) & \text{if } r \leq \pi \\ (3\pi - r, \varphi) & \text{if } r > \pi \end{array} \right. \end{array}
+\end{align}
+The transition maps are then
+\begin{align}
+    \chi_\beta \circ \chi_\alpha^{-1} : \begin{array}{rcl} \chi_\alpha(U_\alpha \cap U_\beta) & \to & \chi_\beta(U_\alpha \cap U_\beta) \\ (r, \varphi) & \mapsto & \left\{ \begin{array}{ll} (\pi - r, \varphi) & \text{if } r \leq \pi \\ (3\pi - r, \varphi) & \text{if } r > \pi \end{array} \right. \end{array}
+\end{align}
+\begin{align}
+    \chi_\alpha \circ \chi_\beta^{-1} : \begin{array}{rcl} \chi_\beta(U_\alpha \cap U_\beta) & \to & \chi_\alpha(U_\alpha \cap U_\beta) \\ (r, \varphi) & \mapsto & \left\{ \begin{array}{ll} (\pi - r, \varphi) & \text{if } r \leq \pi \\ (3\pi - r, \varphi) & \text{if } r > \pi. \end{array} \right. \end{array}
+\end{align}
+
+These maps look discontinuous at first glance, but we need to check against their domains to be certain. Note that $\chi_\alpha(U_\alpha \cap U_\beta) = \chi_\beta(U_\beta \cap U_\alpha) = \{(r, \varphi) \mid 0 < |r - \pi| < \pi, 0 \leq \varphi < 2\pi\}$. So the transition maps can be rewritten
+\begin{align}
+    \chi_\beta \circ \chi_\alpha^{-1} : \begin{array}{rcl} \chi_\alpha(U_\alpha \cap U_\beta) & \to & \chi_\beta(U_\alpha \cap U_\beta) \\ (r, \varphi) & \mapsto & \left\{ \begin{array}{ll} (\pi - r, \varphi) & \text{if } r < \pi \\ (3\pi - r, \varphi) & \text{if } r > \pi. \end{array} \right. \end{array}
+\end{align}
+\begin{align}
+    \chi_\alpha \circ \chi_\beta^{-1} : \begin{array}{rcl} \chi_\beta(U_\alpha \cap U_\beta) & \to & \chi_\alpha(U_\alpha \cap U_\beta) \\ (r, \varphi) & \mapsto & \left\{ \begin{array}{ll} (\pi - r, \varphi) & \text{if } r < \pi \\ (3\pi - r, \varphi) & \text{if } r > \pi \end{array} \right. \end{array}
+\end{align}
+and it is then clear that these are smooth: they are linear over connected components.
+
+The reason that Olver suggests an atlas of three charts is that he aims to only use simply connected charts; if we do not make this restriction, we can easily cover the torus with just two charts as above. See \href{https://math.stackexchange.com/a/2898114/921952}{this Math Exchange post} for a similar discussion.
+
+\end{document}
