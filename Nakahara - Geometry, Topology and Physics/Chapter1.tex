@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{hyperref}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Mikio Nakahara - Geometry, Topology and Physics}
+
+\Large{Chapter 1: Quantum physics}
+
+\large{Carter Hinsley's notes}
+
+Rendered \today
+\end{center}
+
+\section{Analytical mechanics}
+
+\subsection{Newtonian mechanics}
+
+The key results of this section are due to the fact that we (for ostensibly historical reasons) say a system is \emph{conservative} when its force field $\vec{F}(\vec{x})$ may be written as a gradient $-\nabla V(\vec{x})$ of a sufficiently smooth scalar function $V$, called the \emph{potential (energy)}:
+\begin{align}
+    \vec{F}(\vec{x}) &= -\nabla V(\vec{x})
+\end{align}
+Newton's equation is
+\begin{align}
+    \vec{F}(\vec{x}(t)) = m\frac{d^2\vec{x}(t)}{dt^2}.
+\end{align}
+The \emph{(total) energy} $E$ is a quantity used for accounting for the constancy of the potential in a system; the total energy is constant (conserved) if and only if the potential $V$ is constant through time. This is by design; $E$ is chosen precisely so that this occurs:
+\begin{align}
+    E(t_0) = \frac{m}{2}\left(\left.\frac{d\vec{x}}{dt}\right|_{t_0}\right)^2 + V(\vec{x}(t_0)).
+\end{align}
+To see that $E$ is constant when $\vec{F}$ is conservative, take the time derivative:
+\begin{align}
+\begin{split}
+    \left.\frac{dE}{dt}\right|_{t_0} &= m\left.\frac{d\vec{x}(t)}{dt}\right|_{t_0}\left.\frac{d^2\vec{x}(t)}{dt^2}\right|_{t_0} + \nabla V(\vec{x}(t_0)) \left.\frac{d\vec{x}(t)}{dt}\right|_{t_0} \\ \ \\
+    &= \left[-\nabla V(\vec{x}(t_0)) + \nabla V(\vec{x}(t_0))\right]\left.\frac{d\vec{x}(t)}{dt}\right|_{t_0} = 0.
+\end{split}
+\end{align}
+
+An example is given in the textbook of the nonconservative force of friction in one dimension: $F(x) = -\eta \frac{dx}{dt}$. To show that this is a nonconservative force, we may show that any potential function cannot be constant through time (note that we don't need to show the energy as defined in $(3)$ is nonconstant). By $(2)$ we have $-\eta \frac{dx}{dt} = m\frac{d^2x}{dt^2}$. Letting $\dot{x} = \frac{dx}{dt}$, this becomes $-\eta \dot{x} = m\frac{d\dot{x}}{dt}$ which is a separable equation having solution $\dot{x} = Ce^{-\frac{\eta t}{m}}$. Differentiating and using $(2)$ again, we obtain $F(x) = -\eta Ce^{-\frac{\eta t}{m}}$ so that $(1)$ yields $\frac{dV}{dx} = \eta Ce^{-\frac{\eta t}{m}}$. Integrating over $x$, we obtain $V(x) = x\eta Ce^{-\frac{\eta t}{m}} + x_0$. The potential is therefore nonconstant through time.
+
+\end{document}
