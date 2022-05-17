@@ -59,4 +59,14 @@ You can always extend a collection of charts via redundant charts \& coordinate 
 
 A maximal collection of (compatible) charts is called an \emph{atlas}. Atlases behave as do charted covers of manifolds, but since manifolds come associated with countable collections of charts, an atlas is always merely implicit in the specification of a manifold. But due to the mutual compatibility of any redundant charts, the atlas is uniquely determined for any manifold. Most of the time we'll talk about points on a manifold in terms of local coordinates without any description of a particular coordinate system.
 
+\subsection{Maps between manifolds}
+
+A map between manifolds $F : M \to N$ is said to be smooth if it is smooth in every pair of corresponding local coordinate systems. 
+
+\subsection{The maximal rank condition}
+
+\textbf{Definition 1.7.} Let $F : M \to N$ be a smooth map from an $m$-dimensional manifold to an $n$-dimensional manifold. The \emph{rank} of $F$ at $x \in M$ is the rank of the $m \times n$ Jacobian matrix $\left(\frac{\partial F^i}{\partial x^j}\right)$ at $x$. $F$ is of \emph{maximal rank} on a subset $S \subseteq M$ if for each $x \in S$ the rank of $F$ is maximized over $M$ (i.e., $F$ has rank equal to $\min\{m, n\}$).
+
+\textbf{Theorem 1.8.} Let $F : M \to N$ be of maximal rank at $x_0 \in M$. Then there are local coordinates $x = (x^1, \ldots, x^m)$ near $x_0$ and $y = (y^1, \ldots, y^n)$ near $y_0 = F(x_0)$ such that in these coordinates $F$ has the simple form $y = (x^1, \ldots, x^m, 0, \ldots, 0)$ if $m < n$ or $y = (x^1, \ldots, x^n)$ if $m \geq n$.
+
 \end{document}
