@@ -53,4 +53,8 @@ and it is then clear that these are smooth: they are linear over connected compo
 
 The reason that Olver suggests an atlas of three charts is that he aims to only use simply connected charts; if we do not make this restriction, we can easily cover the torus with just two charts as above. See \href{https://math.stackexchange.com/a/2898114/921952}{this Math Exchange post} for a similar discussion.
 
+\subsection{Change of coordinates}
+
+You can always extend an atlas via redundant charts \& coordinate functions so long as these charts are admissible; i.e., the resultant transition maps are all smooth. This permits the choice between multiple coordinate systems for a chart on a manifold. Also, any composition $\psi \circ \chi_\alpha$ --- where $\chi_\alpha : U_\alpha \to V_\alpha \subseteq \R^n$ is a local coordinate function and $\psi : V_\alpha \to \tilde{V}_\alpha \subseteq \R^n$ is an arbitrary diffeomorphism, called a \emph{change of coordinates} --- yields a new coordinate system for a given chart. Any property of the manifold $M$ under the coordinates $\chi_\alpha$ or $\psi \circ \chi_\alpha$ must be preserved. We therefore never need to make a restriction to a particular coordinate system when talking about properties of manifolds other than for purposes of computation; all results on a manifold are intrinsically coordinate-free in nature. 
+
 \end{document}
