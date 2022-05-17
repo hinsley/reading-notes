@@ -47,4 +47,21 @@ To see that $E$ is constant when $\vec{F}$ is conservative, take the time deriva
 
 An example is given in the textbook of the nonconservative force of friction in one dimension: $F(x) = -\eta \frac{dx}{dt}$. To show that this is a nonconservative force, we may show that any potential function cannot be constant through time (note that we don't need to show the energy as defined in $(3)$ is nonconstant). By $(2)$ we have $-\eta \frac{dx}{dt} = m\frac{d^2x}{dt^2}$. Letting $\dot{x} = \frac{dx}{dt}$, this becomes $-\eta \dot{x} = m\frac{d\dot{x}}{dt}$ which is a separable equation having solution $\dot{x} = Ce^{-\frac{\eta t}{m}}$. Differentiating and using $(2)$ again, we obtain $F(x) = -\eta Ce^{-\frac{\eta t}{m}}$ so that $(1)$ yields $\frac{dV}{dx} = \eta Ce^{-\frac{\eta t}{m}}$. Integrating over $x$, we obtain $V(x) = x\eta Ce^{-\frac{\eta t}{m}} + x_0$. The potential is therefore nonconstant through time.
 
+\subsection{Lagrangian mechanics}
+
+The discussion in the early part of this section up to Hamilton's principle is very typical. The part of this that interested me, though, was when I was checking if my existing understanding of variations is sufficient to go over the work in this section (namely, to rederive the Euler-Lagrange equation). I realized that the variation is apparently not a complicated or obfuscated construction atop the function the variation is taken over; rather, the variation is a pointwise deviation of the function. This was something that had not really occurred to me before; I had thought that variations were more subtle.
+
+For a coordinate $q_k$ we have the \emph{generalized momentum}
+\begin{align}
+    \vec{p}_k = \frac{\partial L}{\partial \dot{q}_k}.
+\end{align}
+The Euler-Lagrange equation is then
+\begin{align}
+    \frac{dp_k}{dt} = \frac{\partial L}{\partial q_k}.
+\end{align}
+In order for this to reduce to Newton's equation of motion $(2)$, we let $L = \frac{m}{2}\dot{\vec{q}}^2 + V(\vec{q})$. Then $(6)$ yields
+\begin{align}
+    \text{TODO: Write this part.}
+\end{align}
+
 \end{document}
