@@ -51,7 +51,7 @@ These maps look discontinuous at first glance, but we need to check against thei
 \end{align}
 and it is then clear that these are smooth: they are linear over connected components.
 
-The reason that Olver suggests the use of three charts is that he aims to only use simply connected charts; if we do not make this restriction, we can easily cover the torus with just two charts as above. See \href{https://math.stackexchange.com/a/2898114/921952}{this Math Exchange post} for a similar discussion.
+The reason that Olver suggests the use of three charts is that he aims to only use simply connected charts; if we do not make this restriction, we can easily cover the torus with just two charts as above. See \href{https://math.stackexchange.com/a/2898114/921952}{this Math Exchange post} for a similar discussion. I have been told by someone that we generally require simply connected charts by definition in most texts.
 
 \subsection{Change of coordinates}
 
@@ -68,5 +68,27 @@ A map between manifolds $F : M \to N$ is said to be smooth if it is smooth in ev
 \textbf{Definition 1.7.} Let $F : M \to N$ be a smooth map from an $m$-dimensional manifold to an $n$-dimensional manifold. The \emph{rank} of $F$ at $x \in M$ is the rank of the $m \times n$ Jacobian matrix $\left(\frac{\partial F^i}{\partial x^j}\right)$ at $x$. $F$ is of \emph{maximal rank} on a subset $S \subseteq M$ if for each $x \in S$ the rank of $F$ is maximized over $M$ (i.e., $F$ has rank equal to $\min\{m, n\}$).
 
 \textbf{Theorem 1.8.} Let $F : M \to N$ be of maximal rank at $x_0 \in M$. Then there are local coordinates $x = (x^1, \ldots, x^m)$ near $x_0$ and $y = (y^1, \ldots, y^n)$ near $y_0 = F(x_0)$ such that in these coordinates $F$ has the simple form $y = (x^1, \ldots, x^m, 0, \ldots, 0)$ if $m < n$ or $y = (x^1, \ldots, x^n)$ if $m \geq n$.
+
+The above two results, as far as I can presently see, seem to suggest that most of the time we should be able to think of smooth maps between manifolds as locally being projections or immersions.
+
+\subsection{Submanifolds}
+
+Submanifolds are subsets of manifolds which are themselves manifolds. There are two ways to describe submanifolds: either by implicit representation by the zeroes of some smooth function or by explicit parametrization by a collection of charts.
+
+\textbf{Definition 1.9.} Let $M$ be a smooth manifold. A \emph{submanifold} of $M$ is a subset $N \subseteq M$ together with a smooth bijection $\phi : \tilde{N} \hookrightarrow N$ satisfying the maximal rank condition everywhere. We call $\tilde{N}$, another manifold, the \emph{parameter space} of $N$. $\phi$ is called an \emph{immersion}. Also, $\dim \tilde{N} = \dim N \leq \dim M$.
+
+\textbf{Remark.} Immersed submanifolds do not have singularities. This is due to the maximal rank condition.
+
+It's not quite clear to me why a parameter space must be chosen for a given submanifold. It's also not clear to me why it need not be diffeomorphic to the submanifold. I suspect the answer to each of these questions is related and may be apparent from going over the examples in this section. (It turns out this is true; see example (c).)
+
+\textbf{Example 1.10.} In each of the following examples, $\tilde{N} = \R$ and $\phi : \R \to M$ with $\phi(\R) = N$; $N$ is a submanifold of $M$ parametrized by $\tilde{N}$.
+
+(a) Let $M = \R^3$ and $\phi(t) = (\cos t, \sin t, t)$. This is the standard helix parametrization. This is a regular curve as $\dot{\phi}(t) = (-\sin t, \cos t, 1)$. So it satisfies the maximal rank condition everywhere.
+
+(b) Let $M = \R^2$ and $\phi(t) = ((1 + e^{-t})\cos t, (1 + e^{-t})\sin t)$. This is a logarithmic spiral towards the unit circle.
+
+(c) Let $M = \R^2$ and $\hat\phi(t) = (\sin t, 2\sin(2t))$. This is a figure eight, which has self-intersections whenever $t = k\pi, k \in \Z$. This does not constitute a submanifold of $M$ as the maximal rank condition is not satisfied everywhere. However, $\phi(t) = (\sin(2\arctan t), 2\sin(4\arctan t))$ yields a submanifold of $M$, $N = \phi(\R)$ (consider the range of $\arctan$). This is the ``same'' subspace, but without multiplicities; this one is actually a submanifold. Moreover, we could have taken the alternative immersion $\tilde\phi(t) = (-\sin(2\arctan t), 2\sin(4\arctan t))$. This has the same image but $\phi \circ \tilde\phi^{-1} : \R \to \R$ is not continuous at zero. The point of this example is to show that specifying a submanifold only by a subset of a manifold is ambiguous; it is required that we specify the immersion as well. This necessitates the use of a parameter space as well so that the immersion has a domain.
+
+Example (d) given is not very insightful; it's just a spiral going around a 2-torus. The interesting thing is that for irrational choices of period, we end up with a curve on the torus whose closure is the whole toroidal surface.
 
 \end{document}
