@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: |
+            Axler - Measure, Integration & Real Analysis/*.tex
             Lang - Fundamentals of Differential Geometry/*.tex
             Munkres - Topology/*.tex
             Nakahara - Geometry, Topology and Physics/*.tex
@@ -24,6 +25,7 @@ jobs:
         with:
           name: PDFs
           path: |
+            Axler - Measure, Integration & Real Analysis/*.pdf
             Lang - Fundamentals of Differential Geometry/*.pdf
             Munkres - Topology/*.pdf
             Nakahara - Geometry, Topology and Physics/*.pdf
