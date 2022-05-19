@@ -1,0 +1,124 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{hyperref}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Walter Rudin - Principles of Mathematical Analysis}
+
+\Large{Chapter 11: The Lebesgue Theory}
+
+\large{Carter Hinsley's notes}
+
+Rendered \today
+\end{center}
+
+\section{Set functions}
+
+\textbf{Definition 11.1.} A family $\mathscr{R}$ of sets is called a \emph{ring} if for all $A, B \in \mathscr{R}$ we have $A \cup B \in \mathscr{R}, A - B \in \mathscr{R}$. A ring $\mathscr{R}$ is called a $\sigma$-ring if $\bigcup_{n=1}^\infty A_n \in \mathscr{R}$ whenever $A_n \in \mathscr{R}$. Since $\bigcap_{n=1}^\infty A_n = A_1 - \bigcup_{n=1}^\infty (A_1 - A_n)$, we also have $\bigcap_{n=1}^\infty A_n \in \mathscr{R}$ if $\mathscr{R}$ is a $\sigma$-ring.
+
+We are \emph{not} speaking about rings in the usual algebraic sense.
+
+\textbf{Definition 11.2.} A \emph{set function} $\phi$ maps $\mathscr{R}$ to the extended real number system. $\phi$ is \emph{additive} if $A \cap B = 0 \implies \phi(A \cup B) = \phi(A) + \phi(B)$ (unions of disjoint sets are mapped additively over their constituents, much like mutually exclusive events). $\phi$ is \emph{countably additive} if $A_i \cap A_j = 0 (i \neq j) \implies \phi\left(\bigcup_{n=1}^\infty A_n\right) = \sum_{n=1}^\infty \phi(A_n)$ (unions of pairwise disjoint countable collections of sets are mapped additively over their constituents). In order for this to make sense, we assume the range of $\phi$ does not contain both $+\infty$ and $-\infty$. We also exclude set functions not having any finite values.
+
+If $\phi$ is additive, we have:
+\begin{itemize}
+    \item $\phi(0) = 0$.
+    \item $\phi(A_1 \cup \ldots \cup A_n) = \phi(A_1) + \ldots + \phi(A_n)$ if $A_i \cap A_j = 0$ whenever $i \neq j$.
+    \item $\phi(A_1 \cup A_2) + \phi(A_1 \cap A_2) = \phi(A_1) + \phi(A_2)$.
+    \item $\phi(A_1) \leq \phi(A_2)$ if $\phi(A) \geq 0$ for all $A$ and $A_1 \subseteq A_2$. As a result, nonnegative additive set functions are often called monotonic.
+    \item $\phi(A - B) = \phi(A) - \phi(B)$ if $B \subseteq A$ and $|\phi(B)| < +\infty$.
+\end{itemize}
+
+\textbf{Theorem 11.3.} Suppose $\phi$ is countably additive on a ring $\mathscr{R}$ and $A_n \in \mathscr{R}$ for all $n \in \Z^+$. Suppose also that $A_{n} \subseteq A_{n+1}$ for all $n \in \Z^+$ and $A = \bigcup_{n=1}^\infty A_n$. Then, as $n \to \infty$, $\phi(A_n) \to \phi(A)$. That is, countably additive functions preserve (i.e., commute with) limits of ascending chains of sets.
+
+\section{Construction of the Lebesgue measure}
+
+\textbf{Definition 11.4.} An \emph{interval} in $\R^p$ is a set of points $\mathbf = (x_1, \ldots, x_p)$ such that $a_i \leq x_i \leq b_i$ for all $i$, or with either or both $\leq$s replaced by $<$. We allow $a_i = b_i$.
+
+If $A$ is the union of a finite number of intervals, $A$ is called an \emph{elementary set}. If $I$ is an interval, we define $m(I) = \prod_{i=1}^p (b_i - a_i)$.
+
+If $A = I_1 \cup \ldots \cup I_n$ and the $I_i$s are pairwise disjoint, then $m(A) = m(I_1) + \ldots + m(I_n)$.
+
+By $\mathscr{E}$ we denote the family of all elementary subsets of $\R^p$. $\mathscr{E}$ is a ring, but not a $\sigma$-ring. $m$ is additive on $\mathscr{E}$.
+
+\textbf{Definition 11.5.} A nonnegative additive (i.e., monotonic) set function $\phi$ defined on $\mathscr{E}$ is said to be \emph{regular} if to every $A \in \mathscr{E}$ and every $\varepsilon > 0$ there exist sets $F \in \mathscr{E}, G \in \mathscr{E}$ such that $F$ is closed, $G$ is open, $F \subseteq A \subseteq G$, and $\phi(G) - \varepsilon \leq \phi(A) \leq \phi(F) + \varepsilon$.
+
+This is in essence just saying that we can take any elementary set and find a closed one inside it and an open one outside it such that each is arbitrarily tightly matched to the original set. Obviously $m$ is regular, but $m$ actually satisfies a stronger property than regularity wherein $F$ and $G$ can be found so that $\phi(G) = \phi(A) = \phi(F)$.
+
+\textbf{Example.} Take $\R^p = \R^1$ and let $\alpha : \R \to \R$ be a monotonically increasing function. Put
+\begin{align}
+\begin{split}
+    \mu([a, b)) &= \alpha(b-) - \alpha(a-), \\
+    \mu([a, b]) &= \alpha(b+) - \alpha(a-), \\
+    \mu((a, b]) &= \alpha(b+) - \alpha(a+), \\
+    \mu((a, b)) &= \alpha(b-) - \alpha(a+).
+\end{split}
+\end{align}
+$\mu$ is regular on $\mathscr{E}$.
+
+We proceed to show that every regular set function can be extended to a countably additive set function on a $\sigma$-ring containing $\mathscr{E}$. Note: I was confused about what the purpose of regularity was until I read this line a little more carefully. It's not that we care about extending regular functions to $\sigma$-rings. It's that regularity \emph{allows} us to extend additive set functions to countably additive set functions on $\sigma$-rings.
+
+\textbf{Definition 11.7.} Let $\mu$ be additive, regular, nonnegative, and finite on $\mathscr{E}$. Take any set $E \subseteq \R^p$ with a countable open cover $\{A_n\}$. Define $\mu^*(E) = \inf\sum_{n=1}^\infty \mu(A_n)$ where the infimum is taken over all such coverings. $\mu^*(E)$ is called the \emph{outer measure} of $E$, corresponding to $\mu$.
+
+Obviously $\mu^*(E) \geq 0$ for all $E$ and $\mu^*(E_1) \leq \mu^*(E_2)$ if $E_1 \subseteq E_2$.
+
+The following exercises are from Capinski and Kopp's book \emph{Measure, Integral and Probability, 2nd ed.}
+
+Firstly, we define the term \emph{null set} in the context of $\R$. A null set $A \subseteq \R$ is a set that may be covered by a sequence of intervals of arbitrarily small total length. Any countable set $\{A_1, A_2, \ldots\}$ is clearly a null set because we can cover it with the interval sequence $\{[A_1, A_1], [A_2, A_2], \ldots\}$ of total length $0$.
+
+\textbf{Exercise}. $A \subseteq \R$ is a null set if and only if $m^*(A) = 0$.
+
+\emph{Proof.} $(\implies)$ If $A$ is a null set then we can choose $\varepsilon > 0$ arbitrarily small and there will exist some covering sequence of intervals $\{A_n\}$ such that $m^*\left(\bigcup_{n=1}^\infty A_n\right) < \varepsilon$. As $A \subseteq \bigcup_{n=1}^\infty A_n$, it follows that $m^*(A) \leq m^*\left(\bigcup_{n=1}^\infty A_n\right)$. Hence $m^*(A) = 0$.
+
+$(\impliedby)$ If $m^*(A) = 0$ then for any $\varepsilon > 0$ there exists a countable open cover $\{A_n\}$ such that $m^*\left(\bigcup_{n=1}^\infty A_n\right) < \varepsilon$. Hence $A$ is a null set by definition. $\square$
+
+We need a theorem from this text:
+
+\textbf{Theorem 2.5.} Outer measure is countably subadditive; i.e., for any sequence of sets $\{E_n\}$ we have $\mu^*\left(\bigcup_{n=1}^\infty E_n\right) \leq \sum_{n=1}^\infty m^*(E_n)$.
+
+The proof is essentially immediate. Now for the exercises; keep in mind that all sets $A$ and $B$ are subsets of $\R$:
+
+\textbf{Exercise 2.4.} Prove that if $m^*(A) = 0$ then for each $B$, $m^*(A \cup B) = m^*(B)$.
+
+\emph{Proof.} Note that $A$ and $B - A$ are disjoint sets, $A \cup B = A \cup (B - A)$, and $B - A \subseteq B$. We would therefore like to show that $m^*(A \cup (B - A)) = m^*(B)$. By countable subadditivity we have $m^*(A \cup (B - A)) \leq m^*(A) + m^*(B - A) = m^*(B - A)$. I.e., $m^*(A \cup B) \leq m^*(B - A)$. We know that $B - A \subseteq A \cup B$ so that monotonicity of $m^*$ yields $m^*(B - A) \leq m^*(A \cup B)$. Hence $m^*(A \cup B) = m^*(B)$. $\square$
+
+Note for the next exercise that $\Delta$ denotes the symmetric difference of two sets: $A \Delta B = (A - B) \cup (B - A)$.
+
+\textbf{Exercise 2.5.} Prove that if $m^*(A \Delta B) = 0$, then $m^*(A) = m^*(B)$.
+
+\emph{Proof.} Note that $A \subseteq B \cup (A \Delta B)$; thus $m^*(A) \leq m^*(B \cup (A \Delta B)) \leq m^*(B) + m^*(A \Delta B) = m^*(B)$. Similarly, $m^*(B) \leq m^*(A)$. Hence $m^*(A) = m^*(B)$. $\square$
+
+We now head back to Rudin's text.
+
+\textbf{Theorem 11.8.} (a) For every $A \in \mathscr{E}$, $\mu^*(A) = \mu(A)$.
+
+(b) If $E = \bigcup_{n=1}^\infty E_n$, then $\mu^*(E) \leq \sum_{n=1}^\infty \mu^*(E_n)$ ($\mu$ is subadditive).
+
+\textbf{Definition 11.9.} For any $A, B \subseteq \R^p$, we define $S(A, B) = (A - B) \cup (B - A)$ (the symmetric difference) and $d(A, B) = \mu^*(S(A, B))$. We write $A_n \to A$ if $\lim_{n \to \infty} d(A, A_n) = 0$. If there's a sequence $\{A_n\} \subset \mathscr{E}$ such that $A_n \to A$, we say that $A$ is \emph{finitely $\mu$-measurable} and write $A \in \mathfrak{M}_F(\mu)$. If $A$ is the countable union of finitely $\mu$-measurably sets, we say that $A$ is \emph{$\mu$-measurable} and write $A \in \mathfrak{M}(\mu)$.
+
+The way I think of this is that a set $A$ is finitely $\mu$-measurable if there's a sequence with outer measure approximating that of $A$ in the limit; I like to think of $\mu$-measurability as being something I might like to call \emph{countable} $\mu$-measurability as opposed to finite.
+
+We can now extend $\mu$ to a $\sigma$-ring.
+
+\textbf{Theorem 11.10.} $\mathfrak{M}(\mu)$ is a $\sigma$-ring, and $\mu^*$ is countably additive on $\mathfrak{M}(\mu)$.
+
+I am not interested presently in writing out the proof of this theorem nor the supporting details. I will instead defer to Carpinski and Kopp's text again.
+
+The objects defined are:
+\begin{itemize}
+    \item $\R^*$: The extended real number system.
+    \item $\phi : \mathscr{E} \to \R^*$ is a set function.
+    \item $\mu : \mathscr{E} \to \R^*$ is used to denote an additive, regular, nonnegative, finite set function.
+    \item $\mu^* : \mathcal{P}(\R^p) \to \R^*$ is an outer measure taking the infimum of sums of $\mu$ being applied to the open elementary sets in a countable cover over some set $E \subseteq \R^p$.
+\end{itemize}
+
+\end{document}
