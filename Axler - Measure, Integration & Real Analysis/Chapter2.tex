@@ -24,7 +24,7 @@ Rendered \today
 \section{Outer measure on $\R$}
 
 We have defined the outer measure $|A|$ of a set $A \subseteq \R$ as
-\[|A| = \inf\left\{\sum_{k=1}^\infty \mathscr{l}(I_k) \mid I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^\infty I_k\right\}.\]
+\[|A| = \inf\left\{\sum_{k=1}^\infty m(I_k) \mid I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^\infty I_k\right\}.\]
 The first novel result in this chapter states that the outer measure is not additive:
 
 \textbf{Theorem 2.18.} There exist disjoint subsets $A, B \subset \R$ such that $|A \cup B| \neq |A| + |B|$.
@@ -36,4 +36,39 @@ Axler claims that it then follows that $[-1, 1] \subset \bigcup_{k=1}^\infty (r_
 We then have by countable subadditivity, the order preservation of outer measure, and translation invariance the inequality $2 = |[-1, 1]| \leq \sum_{k=1}^\infty |r_k + V| = \sum_{k=1}^\infty |V| = \infty$. Hence $|V| > 0$.
 
 The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$). Let $n \in \Z^+$. Then $\bigcup_{k=1}^n (r_k + V) \subset [-3, 3]$. This implies that $\left|\bigcup_{k=1}^n (r_k + V)\right| \leq 6$. Note that $\sum_{k=1}^n |r_k + V| = \sum_{k=1}^n |V| = n|V|$. By Archimedean principle we may choose $n$ so that $n|V| > 6$. It follows then that $\left|\bigcup_{k=1}^n (r_k + V)\right| < \sum_{k=1}^n |r_k + V|$. Because these $r_k + V$ are disjoint, we observe by induction that we have proven the theorem. $\square$
+
+\section*{Exercises}
+
+\textbf{1} Prove that if $A$ and $B$ are subsets of $\R$ and $|B| = 0$, then $|A \cup B| = |A|$.
+
+\textbf{2} Suppose $A \subset \R$ and $t \in \R$. Let $tA = \{ta \mid a \in A\}$. Prove that $|tA| = |t||A|$. [Assume that $0 \cdot \infty$ is defined to be $0$.]
+
+\textbf{3} Prove that if $A, B \subset \R$ and $|A| < \infty$, then $|B - A| \geq |B| - |A|$.
+
+\textbf{4} Suppose $F$ is a subset of $\R$ with the property that every open cover of $F$ has a finite subcover. Prove that $F$ is closed and bounded.
+
+\textbf{5} Suppose $\mathcal{A}$ is a set of closed subsets of $\R$ such that $\bigcap_{F \in \mathcal{A}} F = \emptyset$. Prove that if $\mathcal{A}$ contains at least one bounded set, then there exist $n \in \Z^+$ and $F_1, \ldots, F_n \in \mathcal{A}$ such that $F_1 \cap \ldots \cap F_n = \emptyset$.
+
+\textbf{6} Prove that if $a, b \in \R$ and $a < b$, then $|(a, b)| = |[a, b)| = |(a, b]| = b - a$.
+
+\textbf{7} Suppose $a, b, c, d$ are real numbers with $a < b$ and $c < d$. Prove that $|(a, b) \cup (c, d)| = (b - a) + (d - c)$ if and only if $(a, b) \cap (c, d) = \emptyset$.
+
+\textbf{8} Prove that if $A \subset \R$ and $t > 0$, then $|A| = |A \cap (-t, t)| + |A \cap (\R - (-t, t))|$.
+
+\textbf{9} Prove that $|A| = \lim_{t \to \infty} |A \cap (-t, t)|$ for all $A \subset \R$.
+
+\textbf{10} Prove that $|[0, 1] - \Q| = 1$.
+
+\textbf{11} Prove that if $I_1, I_2, \ldots$ is a disjoint sequence of open intervals, then $\left|\bigcup_{k=1}^\infty I_k\right| = \sum_{k=1}^\infty m(I_k)$.
+
+\textbf{12} Suppose $r_1, r_2, \ldots$ is a sequence that contains every rational number. Let $F = \R - \bigcup_{k=1}^\infty \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)$.
+
+(a) Show that $F$ is a closed subset of $\R$.
+
+(b) Prove that if $I$ is an interval contained in $F$, then $I$ contains at most one element.
+
+(c) Prove that $|F| = \infty$.
+
+\textbf{13} Suppose $\varepsilon > 0$. Prove that there exists a subset $F$ of $[0, 1]$ such that $F$ is closed, every element of $F$ is an irrational number, and $|F| > 1 - \varepsilon$.
+
 \end{document}
