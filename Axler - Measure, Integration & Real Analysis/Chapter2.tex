@@ -21,6 +21,19 @@
 Rendered \today
 \end{center}
 
+\section{Outer measure on $\R$}
 
+We have defined the outer measure $|A|$ of a set $A \subseteq \R$ as
+\[|A| = \inf\left\{\sum_{k=1}^\infty \mathscr{l}(I_k) \mid I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^\infty I_k\right\}.\]
+The first novel result in this chapter states that the outer measure is not additive:
 
+\textbf{Theorem 2.18.} There exist disjoint subsets $A, B \subset \R$ such that $|A \cup B| \neq |A| + |B|$.
+
+\emph{Proof.} If $a \in [-1, 1]$, let $\tilde{a} = \{c \in [-1, 1] \mid a - c \in \Q\}$. We have $[-1, 1] = \bigcup_{a \in [-1, 1]} \tilde{a}$. Invoking the axiom of choice, let $V$ be a set containing a representative element of $\tilde{a}$ for each distinct $a \in [-1, 1]$. Enumerate the elements of $[-2, 2] \cap \Q$ as $\{r_1, r_2, \ldots\}$.
+
+Axler claims that it then follows that $[-1, 1] \subset \bigcup_{k=1}^\infty (r_k + V)$. But why? This is because, for any $v \in V$, we have $\tilde{v} \subset \bigcup_{k=1}^\infty (r_k + v)$. Since $\tilde{v} = \tilde{a}$ for a unique $a \in [-1, 1]$ and each such $a \in [-1, 1]$ has a corresponding $v \in V$, this gives the desired result.
+
+We then have by countable subadditivity, the order preservation of outer measure, and translation invariance the inequality $2 = |[-1, 1]| \leq \sum_{k=1}^\infty |r_k + V| = \sum_{k=1}^\infty |V| = \infty$. Hence $|V| > 0$.
+
+The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$). Let $n \in \Z^+$. Then $\bigcup_{k=1}^n (r_k + V) \subset [-3, 3]$. This implies that $\left|\bigcup_{k=1}^n (r_k + V)\right| \leq 6$. Note that $\sum_{k=1}^n |r_k + V| = \sum_{k=1}^n |V| = n|V|$. By Archimedean principle we may choose $n$ so that $n|V| > 6$. It follows then that $\left|\bigcup_{k=1}^n (r_k + V)\right| < \sum_{k=1}^n |r_k + V|$. Because these $r_k + V$ are disjoint, we observe by induction that we have proven the theorem. $\square$
 \end{document}
