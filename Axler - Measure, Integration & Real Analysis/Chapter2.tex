@@ -78,8 +78,6 @@ Letting $F_1 = S$, we have attained the desired result. $\square$
 
 \emph{Proof.} Let $\varepsilon > 0$ satisfy $2\varepsilon \leq b - a$ but otherwise be chosen arbitrarily. Note that by the order preservation of outer measure we have $b - a - 2\varepsilon = |[a + \varepsilon, b - \varepsilon]| \leq |I| \leq |[a, b]| = b - a$ for $I = (a, b), I = [a, b),$ and $I = (a, b]$. Concisely, we have $b - a - 2\varepsilon \leq |I| \leq b - a$. Since $\varepsilon$ may be arbitrarily small, we may take the limit: $\displaystyle \lim_{\varepsilon \to 0^+} b - a - 2\varepsilon \leq \lim_{\varepsilon \to 0^+} |I| \leq \lim_{\varepsilon \to 0^+} b - a$. Thus $b - a \leq |I| \leq b - a$ so that $|I| = b - a$. $\square$
 
-\vspace{0.5cm} % TODO: Remove this.
-
 \textbf{7} Suppose $a, b, c, d$ are real numbers with $a < b$ and $c < d$. Prove that $|(a, b) \cup (c, d)| = (b - a) + (d - c)$ if and only if $(a, b) \cap (c, d) = \emptyset$.
 
 \emph{Proof.} By subadditivity we know that $|(a, b) \cup (c, d)| \leq (b - a) + (d - c)$.
@@ -94,8 +92,6 @@ $(\impliedby)$ Suppose that $(a, b) \cap (c, d) = \emptyset$. Then
 \end{align}
 
 $(\implies)$ On the other hand, suppose that $(a, b) \cap (c, d) = (c, b) \neq \emptyset$. Then $(a, b) \cup (c, d) = (a, d)$ so that $|(a, b) \cup (c, d)| = d - a < (d - a) + (b - c) = (b - a) + (d - c)$. $\square$
-
-\vspace{0.5cm} % TODO: Remove this.
 
 \textbf{8} Prove that if $A \subset \R$ and $t > 0$, then $|A| = |A \cap (-t, t)| + |A \cap (\R - (-t, t))|$.
 
