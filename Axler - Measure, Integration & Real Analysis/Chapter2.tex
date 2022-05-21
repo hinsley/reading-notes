@@ -58,6 +58,22 @@ The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$
 
 \textbf{5} Suppose $\mathcal{A}$ is a set of closed subsets of $\R$ such that $\bigcap_{F \in \mathcal{A}} F = \emptyset$. Prove that if $\mathcal{A}$ contains at least one bounded set, then there exist $n \in \Z^+$ and $F_1, \ldots, F_n \in \mathcal{A}$ such that $F_1 \cap \ldots \cap F_n = \emptyset$.
 
+\emph{Proof.} Suppose $\mathcal{A}$ contains a bounded set $S$. Then
+\begin{align}
+\begin{split}
+    S \cap \bigcap_{F \in \mathcal{A}} F &= \emptyset \\
+    \implies S \subseteq \overline{\bigcap_{F \in \mathcal{A}} F} &= \bigcup_{F \in \mathcal{A}} \overline{F}.
+\end{split}
+\end{align}
+By Heine-Borel theorem, $S$ is compact. Using this result, and because $\{\overline{F}\}_{F \in \mathcal{A}}$ is an open cover of $S$, there exists a finite subcover $\{\overline{F_k}\}_{k=2}^n$ of $S$. Hence
+\begin{align}
+\begin{split}
+    S \subseteq \bigcup_{k=2}^n \overline{F_k} &= \overline{\bigcap_{k=2}^n F_k} \\
+    \implies S \cap \bigcap_{k=2}^n F_k &= \emptyset.
+\end{split}
+\end{align}
+Letting $F_1 = S$, we have attained the desired result. $\square$
+
 \textbf{6} Prove that if $a, b \in \R$ and $a < b$, then $|(a, b)| = |[a, b)| = |(a, b]| = b - a$.
 
 \textbf{7} Suppose $a, b, c, d$ are real numbers with $a < b$ and $c < d$. Prove that $|(a, b) \cup (c, d)| = (b - a) + (d - c)$ if and only if $(a, b) \cap (c, d) = \emptyset$.
