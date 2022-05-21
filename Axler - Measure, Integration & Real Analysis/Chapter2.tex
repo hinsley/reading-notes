@@ -2,6 +2,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{indentfirst}
 \usepackage{hyperref}
 
 \newcommand{\C}{\mathbb{C}}
@@ -41,11 +42,19 @@ The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$
 
 \textbf{1} Prove that if $A$ and $B$ are subsets of $\R$ and $|B| = 0$, then $|A \cup B| = |A|$.
 
+\emph{Proof.} Observe that $A \subseteq A \cup B$ so that $|A| \leq |A \cup B|$. Meanwhile, subadditivity yields $|A \cup B| \leq |A| + |B| = |A|$ so that $|A| = |A \cup B|$. $\square$
+
 \textbf{2} Suppose $A \subset \R$ and $t \in \R$. Let $tA = \{ta \mid a \in A\}$. Prove that $|tA| = |t||A|$. [Assume that $0 \cdot \infty$ is defined to be $0$.]
+
+\emph{Proof.} The case wherein $t = 0$ is trivial; $tA = \{0\}$ or is an empty set. The case wherein $t < 0$ is virtually identical to when $t > 0$, so we omit it. Let $\{I_k\}$ be a countable cover of $A$ by open intervals. For any $a \in A$, we have $a \in I_k$ for at least one $k \in \Z^+$. It follows that $ta \in tI_k$ so that $tA \subseteq \bigcup_{k=1}^\infty tI_k$. Likewise, if $tA$ is covered by $\{tI_k\}$ then $A$ is covered by $\{I_k\}$. Thus $|tA| = \inf\left\{\sum_{k=1}^\infty tI_k \mid I_1, I_2, \ldots \text{ are open intervals and } A \subseteq \bigcup_{k=1}^\infty I_k\right\} = t|A| = |t||A|$. $\square$
 
 \textbf{3} Prove that if $A, B \subset \R$ and $|A| < \infty$, then $|B - A| \geq |B| - |A|$.
 
+\emph{Proof.} Observe that $B = (B - A) \cup (A \cap B)$. By subadditivity and order preservation we have $|B| - |A| = |(B - A) \cup (A \cap B)| - |A| \leq |B - A| + |A \cap B| - |A| = |B - A| - (|A| - |A \cap B|) \leq |B - A|$. $\square$
+
 \textbf{4} Suppose $F$ is a subset of $\R$ with the property that every open cover of $F$ has a finite subcover. Prove that $F$ is closed and bounded.
+
+\emph{Proof.} Obviously a set must be bounded in order to be compact. We now show that any non-closed set has an open set with no finite subcover. If a set $E$ is not closed, there is a limit point $c \in \R$ of $E$ such that $c \notin E$; particularly, given any radius $r > 0$, there exists a point $x \in E$ such that $0 < |x - c| < r$. Let $\{x_k\}$ be a sequence of points in $E$ such that $|x_{k+1} - c| \leq |x_k - c|$ for all $k \in \Z^+$ and $x_k \to x$ as $k \to \infty$. Let $\{I_k\}$ be a countable covering of $E$ by open intervals such that $x_i \in I_j$ if and only if $i = j$ and $x \notin \bigcup_{k=1}^\infty I_k$ (these criteria are possible because $\R$ is Hausdorff). $\{I_k\}$ is a ``minimal'' covering of $E$ in the sense that if any $I_k$ were removed, the sequence would no longer form a cover of $E$. As $\{I_k\}$ is an uncountable open cover, $E$ is not compact. $\square$
 
 \textbf{5} Suppose $\mathcal{A}$ is a set of closed subsets of $\R$ such that $\bigcap_{F \in \mathcal{A}} F = \emptyset$. Prove that if $\mathcal{A}$ contains at least one bounded set, then there exist $n \in \Z^+$ and $F_1, \ldots, F_n \in \mathcal{A}$ such that $F_1 \cap \ldots \cap F_n = \emptyset$.
 
