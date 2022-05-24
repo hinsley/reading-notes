@@ -38,6 +38,8 @@ We then have by countable subadditivity, the order preservation of outer measure
 
 The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$). Let $n \in \Z^+$. Then $\bigcup_{k=1}^n (r_k + V) \subset [-3, 3]$. This implies that $\left|\bigcup_{k=1}^n (r_k + V)\right| \leq 6$. Note that $\sum_{k=1}^n |r_k + V| = \sum_{k=1}^n |V| = n|V|$. By Archimedean principle we may choose $n$ so that $n|V| > 6$. It follows then that $\left|\bigcup_{k=1}^n (r_k + V)\right| < \sum_{k=1}^n |r_k + V|$. Because these $r_k + V$ are disjoint, we observe by induction that we have proven the theorem. $\square$
 
+The result above uses a \emph{Vitali set}.
+
 I have read in some competing notes for this material that the outer measure is sometimes defined using closed intervals rather than open intervals. This allows one to speak about coverings of sets being \emph{almost disjoint}, which could prove helpful.
 
 \section*{Exercises}
@@ -128,16 +130,30 @@ Hence $|A| = |A \cap (-t, t)| + |A \cap \overline{(-t, t)}|$. $\square$
 
 \textbf{10} Prove that $|[0, 1] - \Q| = 1$.
 
-\textbf{11} Prove that if $I_1, I_2, \ldots$ is a disjoint sequence of open intervals, then $\left|\bigcup_{k=1}^\infty I_k\right| = \sum_{k=1}^\infty m(I_k)$.
+\emph{Proof.} Because $[0, 1] - \Q \subset (0, 1)$, we have $|[0, 1] - \Q| \leq |(0, 1)|$. Because any open cover of $[0, 1] - \Q$ is also an open cover of $(0, 1)$, the fact that outer measure is an infimum yields $|[0, 1] - \Q| \geq |(0, 1)|$. Hence $|[0, 1] - \Q| = |(0, 1)| = 1$. $\square$
+
+\textbf{11} Prove that if $I_1, I_2, \ldots$ is a disjoint sequence of open intervals, then $\left|\bigcup_{k=1}^\infty I_k\right| = \sum_{k=1}^\infty m(I_k)$
+
+\emph{Proof.} For any $n \in \Z^+$, we have $\displaystyle \left|\bigcup_{k=1}^n I_k\right| \leq \left|\bigcup_{k=1}^\infty I_k\right|$ by order preservation of outer measure. Also, for any $n \in \Z^+$ we have $\sum_{k=1}^n |I_k| = \left|\bigcup_{k=1}^n I_k\right|$. Taking limits and using countable subadditivity, we get $\displaystyle \sum_{k=1}^\infty |I_k| = \lim_{n \to \infty} \left|\bigcup_{k=1}^n I_k\right| \leq \left|\bigcup_{k=1}^\infty I_k\right| \leq \sum_{k=1}^\infty |I_k|$. Hence $\displaystyle \left|\bigcup_{k=1}^\infty I_k\right| = \sum_{k=1}^\infty |I_k|$. $\square$
 
 \textbf{12} Suppose $r_1, r_2, \ldots$ is a sequence that contains every rational number. Let $F = \R - \bigcup_{k=1}^\infty \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)$.
 
 (a) Show that $F$ is a closed subset of $\R$.
 
+\emph{Proof.} This is a basic topological fact; open sets are closed under arbitrary (here countable) union. $\square$
+
 (b) Prove that if $I$ is an interval contained in $F$, then $I$ contains at most one element.
+
+\emph{Proof.} The rationals are dense in $\R$; every interval with more than one element contains a rational. Because no rationals are in $F$, the only intervals must be singleton sets. $\square$
 
 (c) Prove that $|F| = \infty$.
 
+\emph{Proof.} Firstly, we show that $|\R| = \infty$. Let $I_k = \left(k - \frac12, k + \frac12\right)$ for all $k \in \Z^+$. By exercise 11 and order preservation we have $\infty = \sum_{k=1}^\infty 1 = \left|\bigcup_{k=1}^\infty I_k\right| \leq |\R|$; this yields the desired result. Note now that $F \cup \overline{F} = \R$. By finite subadditivity we have $\infty = |\R| = |F \cup \overline{F}| \leq |F| + |\overline{F}|$. Thus $\infty = |F| + |\overline{F}|$.
+
+It now suffices to show that $|\overline{F}| < \infty$. Note that $\overline{F} = \bigcup_{k=1}^\infty \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)$. By countable subadditivity we have $|\overline{F}| \leq \sum_{k=1}^\infty \frac{1}{2^{k-1}} = 2$. Hence $|F| = \infty$. $\square$
+
 \textbf{13} Suppose $\varepsilon > 0$. Prove that there exists a subset $F$ of $[0, 1]$ such that $F$ is closed, every element of $F$ is an irrational number, and $|F| > 1 - \varepsilon$.
+
+\emph{Proof.} Because $|\Q| = 0$, we can fix $\varepsilon > 0$ and find an open interval covering sequence $\{I_k\}$ of $[0, 1] \cap \Q$ such that $\sum_{k=1}^\infty |I_k| < \varepsilon$. Let $F = [0, 1] - \bigcup_{k=1}^\infty I_k$. Then $F$ is closed and contains only irrationals. Note that $[0, 1] = F \cup \bigcup_{k=1}^\infty I_k$. By countable subadditivity, we obtain $1 = |[0, 1]| = \left|F \cup \bigcup_{k=1}^\infty I_k\right| \leq |F| + \sum_{k=1}^\infty |I_k| < |F| + \varepsilon$. That is, $|F| > 1 - \varepsilon$. $\square$
 
 \end{document}
