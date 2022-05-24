@@ -38,6 +38,8 @@ We then have by countable subadditivity, the order preservation of outer measure
 
 The sets $r_1 + V, r_2 + V, \ldots$ are disjoint (recall the construction of $V$). Let $n \in \Z^+$. Then $\bigcup_{k=1}^n (r_k + V) \subset [-3, 3]$. This implies that $\left|\bigcup_{k=1}^n (r_k + V)\right| \leq 6$. Note that $\sum_{k=1}^n |r_k + V| = \sum_{k=1}^n |V| = n|V|$. By Archimedean principle we may choose $n$ so that $n|V| > 6$. It follows then that $\left|\bigcup_{k=1}^n (r_k + V)\right| < \sum_{k=1}^n |r_k + V|$. Because these $r_k + V$ are disjoint, we observe by induction that we have proven the theorem. $\square$
 
+I have read in some competing notes for this material that the outer measure is sometimes defined using closed intervals rather than open intervals. This allows one to speak about coverings of sets being \emph{almost disjoint}, which could prove helpful.
+
 \section*{Exercises}
 
 \textbf{1} Prove that if $A$ and $B$ are subsets of $\R$ and $|B| = 0$, then $|A \cup B| = |A|$.
@@ -85,8 +87,8 @@ Letting $F_1 = S$, we have attained the desired result. $\square$
 $(\impliedby)$ Suppose that $(a, b) \cap (c, d) = \emptyset$. Then
 \begin{align}
 \begin{split}
-    |(a, b) \cap (c, d)| &= \inf\left\{\left.\sum_{k=1}^\infty I_k \right| I_1, I_2, \ldots \text{ are open intervals and } (a, b) \cap (c, d) \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
-    &\geq \inf\left\{\left.\sum_{k=1}^\infty I_k \right| \ldots \text{and } (a, b) \subseteq \bigcup_{k=1}^\infty I_k\right\} + \inf\left\{\left.\sum_{k=1}^\infty I_k \right| \ldots \text{and } (c, d) \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    |(a, b) \cap (c, d)| &= \inf\left\{\left.\sum_{k=1}^\infty |I_k| \right| I_1, I_2, \ldots \text{ are open intervals and } (a, b) \cap (c, d) \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    &\geq \inf\left\{\left.\sum_{k=1}^\infty |I_k| \right| \ldots \text{and } (a, b) \subseteq \bigcup_{k=1}^\infty I_k\right\} + \inf\left\{\left.\sum_{k=1}^\infty +I_k| \right| \ldots \text{and } (c, d) \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
     &= |(a, b)| + |(c, d)| = (b - a) + (d - c).
 \end{split}
 \end{align}
@@ -95,9 +97,34 @@ $(\implies)$ On the other hand, suppose that $(a, b) \cap (c, d) = (c, b) \neq \
 
 \textbf{8} Prove that if $A \subset \R$ and $t > 0$, then $|A| = |A \cap (-t, t)| + |A \cap (\R - (-t, t))|$.
 
-\emph{Proof.} 
+\emph{Proof.} In general, subdivision of a set by intersection with finitely many disjoint intervals will satisfy additivity of outer measure. To show this for the problem at hand, write
+\begin{align}
+\begin{split}
+    |A| &= \inf\left\{\left.\sum_{k=1}^\infty |I_k| \right| I_1, I_2, \ldots \text{ are open intervals and } A \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    &= \inf\left\{\left.\sum_{k=1}^\infty (|I_k \cap (-\infty, -t)| + |I_k \cap (-t, t)| + |I_k \cap (t, \infty)|) \right| \ldots \text{and } A \subseteq \bigcup_{k=1}^\infty I_k\right\}.
+\end{split}
+\end{align}
+To see that additivity holds here, observe that if any interval $I_k$ has $t$ (or $-t$) in its interior, the outer measure of that interval is the same as the sum of outer measures $I_k \cap (-\infty, t)$ and $I_k \cap (t, \infty)$ (or the sum of $I_k \cap (-\infty, -t)$ and $I_k \cap (-t, \infty)$). Thus
+\begin{align}
+\begin{split}
+    |A| &= \inf\left\{\left.\sum_{k=1}^\infty |I_k \cap (-\infty, -t)| \right| \ldots \text{and } A \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    &+ \inf\left\{\left.\sum_{k=1}^\infty |I_k \cap (-t, t)| \right| \ldots \text{and } A \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    &+ \inf\left\{\left.\sum_{k=1}^\infty |I_k \cap (t, \infty)| \right| \ldots \text{and } A \subseteq \bigcup_{k=1}^\infty I_k\right\} \\ \ \\
+    &= |A \cap (-t, t)| + |A \cap (-\infty, -t)| + |A \cap (t, \infty)|.
+\end{split}
+\end{align}
+By the same logic, we have
+\begin{align}
+\begin{split}
+    |A \cap (-t, t)| + |A \cap \overline{(-t, t)}| &= |A \cap (-t, t)| + |A \cap ((-\infty, -t) \cup (t, \infty))| \\ \ \\
+    &= |A \cap (-t, t)| + |A \cap (-\infty, -t)| + |A \cap (t, \infty)|.
+\end{split}
+\end{align}
+Hence $|A| = |A \cap (-t, t)| + |A \cap \overline{(-t, t)}|$. $\square$
 
 \textbf{9} Prove that $|A| = \lim_{t \to \infty} |A \cap (-t, t)|$ for all $A \subset \R$.
+
+\emph{Proof.} Suppose that $|A| < \infty$. Then, for any $\varepsilon > 0$, there exists a cover of $A$ by open intervals such that $\displaystyle \sum_{k=1}^\infty |I_k| = |A| + \varepsilon$. That is, $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n |I_k| = |A| + \varepsilon$. Looking a little more carefully, for any $varepsilon' > 0$, there exists $M \in \Z^+$ such that $n \geq M$ implies $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| - \varepsilon < \varepsilon'$, or that $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| < \varepsilon + \varepsilon'$.
 
 \textbf{10} Prove that $|[0, 1] - \Q| = 1$.
 
