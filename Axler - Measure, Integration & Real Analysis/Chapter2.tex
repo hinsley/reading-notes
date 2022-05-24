@@ -124,7 +124,7 @@ Hence $|A| = |A \cap (-t, t)| + |A \cap \overline{(-t, t)}|$. $\square$
 
 \textbf{9} Prove that $|A| = \lim_{t \to \infty} |A \cap (-t, t)|$ for all $A \subset \R$.
 
-\emph{Proof.} Suppose that $|A| < \infty$. Then, for any $\varepsilon > 0$, there exists a cover of $A$ by open intervals such that $\displaystyle \sum_{k=1}^\infty |I_k| = |A| + \varepsilon$. That is, $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n |I_k| = |A| + \varepsilon$. Looking a little more carefully, for any $varepsilon' > 0$, there exists $M \in \Z^+$ such that $n \geq M$ implies $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| - \varepsilon < \varepsilon'$, or that $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| < \varepsilon + \varepsilon'$.
+\emph{Proof.} Suppose that $|A| < \infty$. Then, for any $\varepsilon > 0$, there exists a cover of $A$ by open intervals such that $\displaystyle \sum_{k=1}^\infty |I_k| = |A| + \varepsilon$. That is, $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n |I_k| = |A| + \varepsilon$. Looking a little more carefully, for any $\varepsilon' > 0$, there exists $M \in \Z^+$ such that $n \geq M$ implies $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| - \varepsilon < \varepsilon'$, or that $\displaystyle \left(\sum_{k=1}^n |I_k|\right) - |A| < \varepsilon + \varepsilon'$. Essentially, no matter what ordering is chosen on the sequence of intervals, we can find a finite subsequence that has total measure arbitrarily close to $|A|$. Of course, the corresponding union $\bigcup_{k=1}^n I_k$ is a bounded set. Fixing $\varepsilon + \varepsilon'$, we can always find a bound $t$ so that $\bigcup_{k=1}^n I_k \subseteq (-t, t)$, which yields the desired result. $\square$
 
 \textbf{10} Prove that $|[0, 1] - \Q| = 1$.
 
