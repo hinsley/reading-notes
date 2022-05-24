@@ -156,4 +156,10 @@ It now suffices to show that $|\overline{F}| < \infty$. Note that $\overline{F} 
 
 \emph{Proof.} Because $|\Q| = 0$, we can fix $\varepsilon > 0$ and find an open interval covering sequence $\{I_k\}$ of $[0, 1] \cap \Q$ such that $\sum_{k=1}^\infty |I_k| < \varepsilon$. Let $F = [0, 1] - \bigcup_{k=1}^\infty I_k$. Then $F$ is closed and contains only irrationals. Note that $[0, 1] = F \cup \bigcup_{k=1}^\infty I_k$. By countable subadditivity, we obtain $1 = |[0, 1]| = \left|F \cup \bigcup_{k=1}^\infty I_k\right| \leq |F| + \sum_{k=1}^\infty |I_k| < |F| + \varepsilon$. That is, $|F| > 1 - \varepsilon$. $\square$
 
+\section{Measurable spaces and functions}
+
+There is no way to get a notion of measure which has all of the nice properties of outer measure (non-negativity, monotonicity, agreement with Jordan measure on open intervals, and translation invariance) as well as additivity on countable disjoint unions. This is because the proof we used for outer measure -- discussing the same result there -- works with just these properties.
+
+\subsection{$\sigma$-algebras}
+
 \end{document}
