@@ -162,4 +162,22 @@ There is no way to get a notion of measure which has all of the nice properties 
 
 \subsection{$\sigma$-algebras}
 
+\textbf{Definition.} Let $X$ be a set and $S \subset \mathcal{P}(X)$. $S$ is called a \emph{$\sigma$-algebra} on $X$ if $\emptyset \in S$ and $S$ is closed with respect to complements and countable unions.
+
+\textbf{Example.} Let $X$ be a set. The collection $S$ of all subsets $E$ of $X$ such that $E$ is countable or $X - E$ is countable is a $\sigma$-algebra on $X$.
+
+\emph{Proof.} $S$ obviously contains $\emptyset$ and is closed under complementation. We have only to check that $S$ is closed under countable union. Let $E = \bigcup_{k=1}^\infty E_k$ where each $E_k$ is a member of $S$. If each $E_k$ is countable, then as the countable union of countable sets is countable, $E$ is countable and thus $E \in S$. Suppose on the other hand WLOG that $E_1$ is uncountable; it therefore must have countable complement. Then $\overline{E} = \overline{\bigcup_{k=1}^\infty E_k} = \bigcap_{k=1}^\infty \overline{E_k} \subseteq \overline{E_1}$. As $\overline{E_1}$ is countable, so too must be $\overline{E}$. Hence $E \in S$. $\square$
+
+\textbf{Remark.} $\sigma$-algebras are closed with respect to countable intersection and set subtraction.
+
+\textbf{Definition.} A \emph{measurable space} is an ordered pair $(X, S)$, where $X$ is a set and $S$ is a $\sigma$-algebra on $X$. Any element of $S$ is called an \emph{$S$-measurable set}.
+
+\textbf{Theorem 2.27.} Let $X$ be a set and $\mathcal{A} \subseteq \mathcal{P}(X)$. The intersection of all $\sigma$-algebras on $X$ that contain $\mathcal{A}$ is a $\sigma$-algebra on $X$. The proof of this statement is very simple.
+
+\textbf{Definition.} The smallest $\sigma$-algebra on $\R$ containing the standard topology on $\R$ is called the \emph{Borel $\sigma$-algebra} on $\R$. Elements of this $\sigma$-algebra are called \emph{Borel sets}.
+
+\textbf{Example.} This was an example of a Borel set one of my professors showed me a while back but I did not have the background to fully appreciate. Any half-open interval $[a, b)$ in $\R$ is a Borel set as $[a, b) = \bigcap_{k=1}^\infty \left(a - \frac1k, b\right)$.
+
+\textbf{Example.} If $f : \R \to \R$ is a function, the set of points at which $f$ is continuous is a Borel set (it is the intersection of a sequence of open sets; see Exercise 12 in this section).
+
 \end{document}
