@@ -12,6 +12,7 @@ jobs:
           root_file: |
             Axler - Measure, Integration & Real Analysis/*.tex
             Lang - Fundamentals of Differential Geometry/*.tex
+            Mac Lane - Categories for the Working Mathematician/*.tex
             Munkres - Topology/*.tex
             Nakahara - Geometry, Topology and Physics/*.tex
             Olver - Applications of Lie Groups to Differential Equations/*.tex
@@ -27,6 +28,7 @@ jobs:
           path: |
             Axler - Measure, Integration & Real Analysis/*.pdf
             Lang - Fundamentals of Differential Geometry/*.pdf
+            Mac Lane - Categories for the Working Mathematician/*.pdf
             Munkres - Topology/*.pdf
             Nakahara - Geometry, Topology and Physics/*.pdf
             Olver - Applications of Lie Groups to Differential Equations/*.pdf
