@@ -180,4 +180,40 @@ There is no way to get a notion of measure which has all of the nice properties 
 
 \textbf{Example.} If $f : \R \to \R$ is a function, the set of points at which $f$ is continuous is a Borel set (it is the intersection of a sequence of open sets; see Exercise 12 in this section).
 
+\subsection{Inverse images}
+
+\textbf{Proposition 2.33 (algebra of inverse images).} Suppose $f : X \to Y$ is a function. Then
+
+(a) $f^{-1}(Y - A) = X - f^{-1}(A)$ for every $A \subseteq Y$ (inverse images preserve set subtraction);
+
+(b) $f^{-1}\left(\bigcup_{A \in \mathcal{A}} f^{-1}(A)\right) = \bigcup_{A \in \mathcal{A}} f^{-1}(A)$ for every $\mathcal{A} \subseteq \mathcal{P}(Y)$ (inverse images preserve arbitrary unions);
+
+(c) $f^{-1}\left(\bigcap_{A \in \mathcal{A}} f^{-1}(A)\right) = \bigcap_{A \in \mathcal{A}} f^{-1}(A)$ for every $\mathcal{A} \subseteq \mathcal{P}(Y)$ (inverse images preserve arbitrary intersections).
+
+\textbf{Proposition 2.34.} Suppose $f : X \to Y$ and $g : Y \to W$ are functions. Then $(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$ for every $A \subseteq W$.
+
+\subsection{Measurable functions}
+
+\textbf{Definition.} Suppose $(X, S)$ is a measurable space. A function $f : X \to \R$ is called \emph{$S$-measurable} if $f^{-1}(B) \in S$ for every Borel set $B \subseteq \R$.
+
+Measurability resembles continuity in some fashion, which could make it easier to remember this definition.
+
+\textbf{Example.} If $S = \{\emptyset, X\}$, the only $S$-measurable functions $X \to \R$ are the constant functions.
+
+\textbf{Example.} If $S = \mathcal{P}(X)$, then all functions $X \to \R$ are $S$-measurable.
+
+\textbf{Example.} If $S = \{\emptyset, (-\infty, 0), [0, \infty), \R\}$ (a $\sigma$-algebra on $\R$), then a function $f : \R \to \R$ is $S$-measurable if and only if $f$ is constant on $(-\infty, 0)$ and constant on $[0, \infty)$.
+
+To get some idea of why this last example is true, let $f(x) = x$ be the identity function on $\R$. Then $f^{-1}(y) = y$ for all $y \in \R$. As $(-1, 1)$ is a Borel set in $\R$ (it's an open set, so it must be a Borel set), yet $f^{-1}((-1, 1)) = (-1, 1) \notin S$, we can see $f$ isn't $S$-measurable.
+
+\textbf{Definition.} The indicator function for membership within a set $E$ is the \emph{characteristic function}, written $\chi_E$.
+
+\textbf{Example.} $\chi_E$ is an $S$-measurable function if and only if $E \in S$.
+
+In order to check if a function is $S$-measurable, the definition of $S$-measurability suggests we need to check if the inverse image of every Borel set in $\R$ maps back to an element of $S$. It turns out that we can actually just check a smaller collection of Borel sets in $\R$ for their inverse image, due to the following result.
+
+\textbf{Theorem 2.39.} Suppose $(X, S)$ is a measurable space and $f : X \to \R$ is a function such that $f^{-1}((a, \infty)) \in S$ for all $a \in \R$. Then $f$ is a $S$-measurable function.
+
+% TODO: Run through the proof of this.
+
 \end{document}
