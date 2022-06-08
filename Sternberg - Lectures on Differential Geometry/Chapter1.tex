@@ -29,6 +29,6 @@ Let $V, W$ be vector spaces with dimension $m, n$ respectively. Then $\hom(V, W)
 
 \textbf{Exercise 1.3.} Let $v_1, \ldots, v_m$ be a basis of $V$ and $w_1, \ldots, w_n$ a basis of $W$. Show that $\{\varphi(v_i, w_j)\},\ i = 1, \ldots, m,\ j = 1, \ldots, n$ is a basis of $\hom(V^*, W)$.
 
-\emph{Proof.} $\hom(V^*, W)$ is an $mn$-dimensional vector space; we need only to show that the $\varphi(v_i, w_j)$ are linearly independent. 
+\emph{Proof.} $\hom(V^*, W)$ is an $mn$-dimensional vector space; we need only to show that the $\varphi(v_i, w_j)$ are linearly independent. To do this, use Einstein summation notation and let $a_ib_j\varphi(v_i, w_j) = 0$. Then, for all $v^* \in V^*$, we have $a_jb_j\langle v_i, v^* \rangle w_j = 0$. Because $v^*$ is arbitrary, this implies that $\varphi(v_i, w_j) = 0$ for each $i, j$. $\square$
 
 \end{document}
