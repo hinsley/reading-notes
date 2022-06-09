@@ -11,6 +11,7 @@ jobs:
         with:
           root_file: |
             Axler - Measure, Integration & Real Analysis/*.tex
+            Hatcher - Algebraic Topology/*.tex
             Lang - Fundamentals of Differential Geometry/*.tex
             Mac Lane - Categories for the Working Mathematician/*.tex
             Munkres - Topology/*.tex
@@ -28,6 +29,7 @@ jobs:
           name: PDFs
           path: |
             Axler - Measure, Integration & Real Analysis/*.pdf
+            Hatcher - Algebraic Topology/*.pdf
             Lang - Fundamentals of Differential Geometry/*.pdf
             Mac Lane - Categories for the Working Mathematician/*.pdf
             Munkres - Topology/*.pdf
