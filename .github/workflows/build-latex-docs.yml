@@ -22,7 +22,7 @@ jobs:
             Sternberg - Lectures on Differential Geometry/*.tex
             Tu - Introduction to Manifolds/*.tex
           glob_root_file: true
-          work_in_root_file_dir: false
+          work_in_root_file_dir: true
       - name: Upload PDFs
         uses: actions/upload-artifact@v2
         with:
