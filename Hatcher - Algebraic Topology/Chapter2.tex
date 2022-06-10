@@ -39,6 +39,8 @@ Here's an example in the case of simplicial homology:
 
 Letting $\partial_0 : C_0(X) \to 0$, the boundary maps $\partial_n$ form a long exact chain called a \emph{chain complex}. Thus we define the $n$th singular homology group $H_n(X) = \ker \partial_n / \text{im } \partial_{n+1}$.
 
-Any two homeomorphic spaces will clearly have isomorphic simplicial homology groups.
+Any two homeomorphic spaces will clearly have isomorphic singular homology groups.
+
+It turns out that, counterintuitively, singular homology is a special case of simplicial homology. For an arbitrary space $X$, define the \emph{singular complex} $S(X)$ to be the $\Delta$-complex with one $n$-simplex $\Delta_\sigma^n$ for each singular $n$-simplex $\sigma : \Delta^n \to X$, with $\Delta_\sigma^n$ attached in the obvious way to the $(n-1)$-simplices of $S(X)$ that are the restrictions of $\sigma$ to the various $(n-1)$-simplices in $\partial \Delta^n$. Now observe that $H_n^\Delta(S(X))$ is identical to $H_n(X)$ for all $n$. One can regard $S(X)$ as a $\Delta$-complex model for $X$, but it's usually extremely large compared to $X$.
 
 \end{document}
