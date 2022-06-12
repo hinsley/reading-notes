@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, mathrsfs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+\LARGE{James Munkres - Elements of Algebraic Topology}
+
+\Large{Chapter 1: Homology groups of a simplicial complex}
+
+\large{Carter Hinsley's notes}
+
+Rendered \today
+\end{center}
+
+This text has a much more comprehensive treatment of simplicial complexes than does Hatcher. I am taking my notes from this section primarily by hand, though, so this section will be a little more sparse than usual.
+
+\section{Simplicial complexes and simplicial maps}
+
+\subsection{Exercises}
+
+\textbf{1.} Let $K$ be a simplicial complex; let $\sigma \in K$. When is $\text{Int } \sigma$ open in $|K|$? When is $\sigma$ open in $|K|$?
+
+\emph{Solution.} Let $A = |K| - \text{Int } \sigma$. We aim to determine when $A$ is closed in $|K|$; this is the case when $A \cap \tau$ is closed in $\tau$ for every $\tau$ in $K$. In general, either $A \cap \tau$ is empty or it contains only a union of finitely many $n$-faces so that it is a closed set. Hence $\text{Int } \sigma$ is always open in $|K|$. As for when $\sigma$ is open in $|K|$, suppose $\sigma$ shares a vertex with some $1$-simplex $\tau \in K$ not fully contained inside $\sigma$. Then $\tau - \sigma$ will not contain its limit point $\sigma \cap \tau$ in $\tau$ so it is not closed; it follows that $\sigma$ is not open in $|K|$. This implies that $\sigma$ is not open if it shares any face with another distinct simplex in $K$. It is obvious from definitions that $\sigma$ is open in $|K|$ if it shares no faces with any simplex in $K$ it does not contain. $\square$
+
+The \emph{cokernel} of a group homomorphism $f : G \to H$ is the quotient $H/f(G)$.
+
+\end{document}

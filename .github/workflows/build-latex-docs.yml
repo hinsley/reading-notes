@@ -14,6 +14,7 @@ jobs:
             Hatcher - Algebraic Topology/*.tex
             Lang - Fundamentals of Differential Geometry/*.tex
             Mac Lane - Categories for the Working Mathematician/*.tex
+            Munkres - Elements of Algebraic Topology/*.tex
             Munkres - Topology/*.tex
             Nakahara - Geometry, Topology and Physics/*.tex
             Olver - Applications of Lie Groups to Differential Equations/*.tex
@@ -32,6 +33,7 @@ jobs:
             Hatcher - Algebraic Topology/*.pdf
             Lang - Fundamentals of Differential Geometry/*.pdf
             Mac Lane - Categories for the Working Mathematician/*.pdf
+            Munkres - Elements of Algebraic Topology/*.pdf
             Munkres - Topology/*.pdf
             Nakahara - Geometry, Topology and Physics/*.pdf
             Olver - Applications of Lie Groups to Differential Equations/*.pdf
